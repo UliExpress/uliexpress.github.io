@@ -16,7 +16,7 @@
           margin: 0;
           font-family: HelveticaNeue;
         }
-    
+
         .header {
           display: flex;
           justify-content: space-between;
@@ -59,10 +59,75 @@
           <img src="images/uliexpress.png" alt="Logo">
         </div>
         <div class="buttons">
-          <a href="#" class="button">Button 1</a>
-          <a href="#" class="button">Button 2</a>
-          <a href="#" class="button">Button 3</a>
+          <a href="https://uliexpress.co/services" class="button">Our Services</a>
+          <a href="https://uliexpress.co/us" class="button">About Us</a>
+          <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
         </div>
       </header>
     </body>
     </html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Space with Photos and Button</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .photo-grid {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .photo-grid img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>I'll use this later. the paragraph</p>
+    <div class="photo-grid">
+      <img src="image1.jpg" alt="Image 1">
+      <img src="image2.jpg" alt="Image 2">
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+    <a href="#" class="btn">Contact us</a>
+  </div>
+</body>
+</html>
