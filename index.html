@@ -6,198 +6,235 @@
   <body>
 
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
+  <html lang="en">
+  <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>UliExpress</title>
       <style>
-        /* Basic Styles */
-        body {
-          margin: 0;
-          font-family: HelveticaNeue, sans-serif;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          background-color: #fff; /* Default background color */
-          color: #000;           /* Default text color */
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
+          /* Basic Styles */
+          body {
+              margin: 0;
+              font-family: HelveticaNeue, sans-serif;
+              display: flex;
+              flex-direction: column;
+              min-height: 100vh;
+              background-color: #fff; /* Default background color */
+              color: #000;              /* Default text color */
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
 
-        /* Header Styles */
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 20px;
-          background-color: #000;
-          color: #fff;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
+          /* Header Styles */
+          .header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 20px;
+              background-color: #000;
+              color: #fff;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          }
 
-        .logo {
-          width: 100px;
-        }
+          .logo {
+              width: 100px;
+          }
 
-        .buttons {
-          display: flex;
-          gap: 10px;
-        }
+          .buttons {
+              display: flex;
+              gap: 10px;
+          }
 
-        .button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 10px 20px;
-          background-color: #fff;
-          color: #000;
-          border: 1px solid #000;
-          border-radius: 20px;
-          text-decoration: none;
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
+          .button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 10px 20px;
+              background-color: #fff;
+              color: #000;
+              border: 1px solid #000;
+              border-radius: 20px;
+              text-decoration: none;
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
 
-        .button:hover {
-          background-color: #000;
-          color: #fff;
-        }
+          .button:hover {
+              background-color: #000;
+              color: #fff;
+          }
 
-        /* Content Styles */
-        .container {
-          text-align: center;
-          padding: 20px;
-          flex-grow: 1;
-        }
+          /* Content Styles */
+          .container {
+              text-align: center;
+              padding: 20px;
+              flex-grow: 1;
+          }
 
-        .photo-grid {
-          display: flex;
-          justify-content: space-around;
-          margin: 20px 0;
-        }
+          .photo-grid {
+              display: flex;
+              flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+              justify-content: space-around;
+              margin: 20px 0;
+          }
 
-        .photo-grid img {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: 10px;
-        }
+          .photo-grid img {
+              width: 100%; /* Make images responsive */
+              max-width: 300px; /* Limit image width on larger screens */
+              height: auto; /* Maintain aspect ratio */
+              object-fit: cover;
+              border-radius: 10px;
+              margin-bottom: 20px; /* Add space between images */
+          }
 
-        .btn {
-          display: inline-block;
-          padding: 15px 30px;
-          font-size: 18px;
-          color: white;
-          background-color: #007bff;
-          border: none;
-          border-radius: 50px;
-          text-decoration: none;
-          transition: transform 0.3s ease;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+          .btn {
+              display: inline-block;
+              padding: 15px 30px;
+              font-size: 18px;
+              color: white;
+              background-color: #007bff;
+              border: none;
+              border-radius: 50px;
+              text-decoration: none;
+              transition: transform 0.3s ease;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          }
 
-        .btn:hover {
-          transform: scale(1.1);
-          box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-        }
+          .btn:hover {
+              transform: scale(1.1);
+              box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+          }
 
-        /* Footer Styles */
-        footer {
-          background-color: #f0f0f0;
-          padding: 10px;
-          text-align: left;
-          box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-          width: 100%;
-        }
+          /* Footer Styles */
+          footer {
+              background-color: #f0f0f0;
+              padding: 10px;
+              text-align: left;
+              box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+              width: 100%;
+          }
 
-        .footer-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          max-width: 960px;
-          margin: 0 auto;
-        }
+          .footer-content {
+              display: flex;
+              flex-wrap: wrap; /* Allow footer content to wrap */
+              align-items: center;
+              justify-content: space-between;
+              max-width: 960px;
+              margin: 0 auto;
+          }
 
-        .logo img {
-          height: 30px;
-        }
+          .logo img {
+              height: 30px;
+          }
 
-        .contact-info {
-          font-size: 14px;
-        }
+          .contact-info {
+              font-size: 14px;
+              margin-bottom: 10px; /* Add space below contact info */
+          }
 
-        .copyright {
-          font-size: 12px;
-        }
+          .copyright {
+              font-size: 12px;
+          }
 
-        /* Dark Mode Styles */
-        body.dark-mode {
-          background-color: #121212;
-          color: #fff;
-        }
+          /* Dark Mode Styles */
+          body.dark-mode {
+              background-color: #121212;
+              color: #fff;
+          }
 
-        .dark-mode .header,
-        .dark-mode .button,
-        .dark-mode footer {
-          background-color: #1f1f1f;
-          color: #fff;
-        }
+          .dark-mode .header,
+          .dark-mode .button,
+          .dark-mode footer {
+              background-color: #1f1f1f;
+              color: #fff;
+          }
 
-        .dark-mode .button {
-          border-color: #fff;
-        }
+          .dark-mode .button {
+              border-color: #fff;
+          }
 
-        .dark-mode .button:hover {
-          background-color: #fff;
-          color: #000;
-        }
+          .dark-mode .button:hover {
+              background-color: #fff;
+              color: #000;
+          }
+
+          /* Media Query for Mobile Responsiveness */
+          @media (max-width: 768px) {
+              .header {
+                  flex-direction: column; /* Stack header elements vertically */
+                  align-items: flex-start;
+              }
+
+              .buttons {
+                  flex-direction: column; /* Stack buttons vertically */
+                  align-items: center;
+                  margin-top: 10px; /* Add space above buttons */
+              }
+
+              .button {
+                  width: 100%; /* Make buttons full width */
+                  margin-bottom: 10px; /* Add space between buttons */
+              }
+
+              .photo-grid {
+                  justify-content: center; /* Center images */
+              }
+
+              .footer-content {
+                  flex-direction: column; /* Stack footer content vertically */
+                  text-align: center; /* Center footer text */
+              }
+
+              .contact-info {
+                  margin-bottom: 20px; /* Add space below contact info */
+              }
+          }
       </style>
-    </head>
-    <body>
+  </head>
+  <body>
       <header class="header">
-        <div class="logo">
-          <img src="images/uliexpress.png" alt="Logo">
-        </div>
-        <div class="buttons">
-          <a href="https://uliexpress.co/services" class="button">Our Services</a>
-          <a href="https://uliexpress.co/us" class="button">About Us</a>
-          <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
-          <button id="darkModeToggle" class="button">Toggle Dark Mode</button>
-        </div>
+          <div class="logo">
+              <img src="images/uliexpress.png" alt="Logo">
+          </div>
+          <div class="buttons">
+              <a href="https://uliexpress.co/services" class="button">Our Services</a>
+              <a href="https://uliexpress.co/us" class="button">About Us</a>
+              <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
+              <button id="darkModeToggle" class="button">Toggle Dark Mode</button>
+          </div>
       </header>
 
       <div class="container">
-        <p>I'll use this later. the paragraph</p>
-        <div class="photo-grid">
-          <img src="image1.jpg" alt="Image 1">
-          <img src="image2.jpg" alt="Image 2">
-          <img src="image3.jpg" alt="Image 3">
-        </div>
-        <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+          <p>I'll use this later. the paragraph</p>
+          <div class="photo-grid">
+              <img src="image1.jpg" alt="Image 1">
+              <img src="image2.jpg" alt="Image 2">
+              <img src="image3.jpg" alt="Image 3">
+          </div>
+          <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
       </div>
 
       <footer>
-        <div class="footer-content">
-          <div class="logo">
-            <img src="images/uliexpress.png" alt="UliExpressLogo">
+          <div class="footer-content">
+              <div class="logo">
+                  <img src="images/uliexpress.png" alt="UliExpressLogo">
+              </div>
+              <div class="contact-info">
+                  <p>Uli Express, Inc.</p>
+                  <p>Email: support@uliexpress.com</p>
+                  <p>Phone: +1 (555) 123-4567</p>
+              </div>
+              <div class="copyright">
+                  &copy; 2024 Uli Express, Inc.
+              </div>
           </div>
-          <div class="contact-info">
-            <p>Uli Express, Inc.</p>
-            <p>Email: support@uliexpress.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-          </div>
-          <div class="copyright">
-            &copy; 2024 Uli Express, Inc.
-          </div>
-        </div>
       </footer>
 
       <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const body = document.body;
 
-        darkModeToggle.addEventListener('click', () => {
-          body.classList.toggle('dark-mode');
-        });
+          darkModeToggle.addEventListener('click', () => {
+              body.classList.toggle('dark-mode');
+          });
       </script>
-    </body>
-    </html>
+  </body>
+  </html>
