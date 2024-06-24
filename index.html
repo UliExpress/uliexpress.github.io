@@ -6,17 +6,25 @@
   <body>
 
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>UliExpress</title>
       <style>
+        /* Basic Styles */
         body {
           margin: 0;
-          font-family: HelveticaNeue;
+          font-family: HelveticaNeue, sans-serif;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          background-color: #fff; /* Default background color */
+          color: #000;           /* Default text color */
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Header Styles */
         .header {
           display: flex;
           justify-content: space-between;
@@ -45,11 +53,102 @@
           color: #000;
           border: 1px solid #000;
           border-radius: 20px;
+          text-decoration: none;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .button:hover {
           background-color: #000;
           color: #fff;
+        }
+
+        /* Content Styles */
+        .container {
+          text-align: center;
+          padding: 20px;
+          flex-grow: 1;
+        }
+
+        .photo-grid {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px 0;
+        }
+
+        .photo-grid img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 15px 30px;
+          font-size: 18px;
+          color: white;
+          background-color: #007bff;
+          border: none;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: transform 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        /* Footer Styles */
+        footer {
+          background-color: #f0f0f0;
+          padding: 10px;
+          text-align: left;
+          box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+          width: 100%;
+        }
+
+        .footer-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 960px;
+          margin: 0 auto;
+        }
+
+        .logo img {
+          height: 30px;
+        }
+
+        .contact-info {
+          font-size: 14px;
+        }
+
+        .copyright {
+          font-size: 12px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+          background-color: #121212;
+          color: #fff;
+        }
+
+        .dark-mode .header,
+        .dark-mode .button,
+        .dark-mode footer {
+          background-color: #1f1f1f;
+          color: #fff;
+        }
+
+        .dark-mode .button {
+          border-color: #fff;
+        }
+
+        .dark-mode .button:hover {
+          background-color: #fff;
+          color: #000;
         }
       </style>
     </head>
@@ -62,72 +161,43 @@
           <a href="https://uliexpress.co/services" class="button">Our Services</a>
           <a href="https://uliexpress.co/us" class="button">About Us</a>
           <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
+          <button id="darkModeToggle" class="button">Toggle Dark Mode</button>
         </div>
       </header>
+
+      <div class="container">
+        <p>I'll use this later. the paragraph</p>
+        <div class="photo-grid">
+          <img src="image1.jpg" alt="Image 1">
+          <img src="image2.jpg" alt="Image 2">
+          <img src="image3.jpg" alt="Image 3">
+        </div>
+        <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="logo">
+            <img src="images/uliexpress.png" alt="UliExpressLogo">
+          </div>
+          <div class="contact-info">
+            <p>Uli Express, Inc.</p>
+            <p>Email: support@uliexpress.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+          </div>
+          <div class="copyright">
+            &copy; 2024 Uli Express, Inc.
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+        });
+      </script>
     </body>
     </html>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Space with Photos and Button</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f0f0f0;
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    .photo-grid {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
-    }
-
-    .photo-grid img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: #007bff;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <p>I'll use this later. the paragraph</p>
-    <div class="photo-grid">
-      <img src="image1.jpg" alt="Image 1">
-      <img src="image2.jpg" alt="Image 2">
-      <img src="image3.jpg" alt="Image 3">
-    </div>
-    <a href="#" class="btn">Contact us</a>
-  </div>
-</body>
-</html>
