@@ -310,7 +310,7 @@
     margin-bottom: 0;
   }
 
-  /* Overlap Effect */
+  /* Overlap Effect - Replaced with Parallax */
   .overlap-container {
     position: relative;
     overflow: hidden;
@@ -338,6 +338,27 @@
   .overlap-image.scroll-active {
     transform: translateY(-50%); /* Adjust the vertical shift as needed */
   }
+
+  /* Parallax Section Styles */
+  section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Make background fixed */
+  }
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    z-index: 1;
+    font-size: 3em;
+    font-weight: 400;
+  }
   </style>
 </head>
 <body>
@@ -353,9 +374,9 @@
     </div>
 
     <div class="buttons" id="navButtons">
-      <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-      <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+      <a href="services.html" class="button">Our Services</a>
+      <a href="about.html" class="button">About Us</a>
+      <a href="contact.html" class="button">Contact Us</a>
       <button id="darkModeToggle" class="button">
         <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
       </button>
@@ -366,51 +387,33 @@
     <h1>Local Bay Area drivers servicing your schedule or on demand delivery needs</h1>
   </section>
 
-  <div class="overlap-container">
-    <img class="overlap-image" src="images/showcase1.jpg" alt="Service 1">
-    <div class="overlap-content">
-      <div class="services-section">
-        <h2>Our Services</h2>
-        <p>Uli Express offers a variety of services to meet your delivery needs. We specialize in:</p>
-      </div>
+  <section style="background-image: url('images/same-day-delivery.jpg');">
+    <h1>Same Day Delivery</h1>
+    <div class="services-section">
+      <p>Get your items delivered quickly and efficiently within the same day.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="overlap-container">
-    <img class="overlap-image" src="images/showcase2.jpg" alt="Service 2">
-    <div class="overlap-content">
-      <div class="services-section">
-        <p>Get your items delivered quickly and efficiently within the same day.</p>
-      </div>
+  <section style="background-image: url('images/scheduled-delivery.jpg');">
+    <h1>Scheduled Delivery</h1>
+    <div class="services-section">
+      <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="overlap-container">
-    <img class="overlap-image" src="images/showcase3.jpg" alt="Service 3">
-    <div class="overlap-content">
-      <div class="services-section">
-        <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
-      </div>
+  <section style="background-image: url('images/large-item-delivery.jpg');">
+    <h1>Large Item Delivery</h1>
+    <div class="services-section">
+      <p>We handle large and bulky items with care and expertise.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="overlap-container">
-    <img class="overlap-image" src="images/showcase4.jpg" alt="Service 4">
-    <div class="overlap-content">
-      <div class="services-section">
-        <p>We handle large and bulky items with care and expertise.</p>
-      </div>
+  <section style="background-image: url('images/white-glove-delivery.jpg');">
+    <h1>White Glove Delivery</h1>
+    <div class="services-section">
+      <p>Enjoy a premium delivery experience with unpacking, assembly, and removal of packaging.</p>
     </div>
-  </div>
-
-  <div class="overlap-container">
-    <img class="overlap-image" src="images/showcase5.jpg" alt="Service 5">
-    <div class="overlap-content">
-      <div class="services-section">
-        <p>Enjoy a premium delivery experience with unpacking, assembly, and removal of packaging.</p>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <footer>
     <div class="footer-content">
@@ -427,48 +430,39 @@
       </div>
     </div>
   </footer>
+
   <script>
 
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const heroSection = document.querySelector('.hero');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const heroSection = document.querySelector('.hero');
 
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
 
-      if (body.classList.contains('dark-mode')) {
-        heroSection.classList.remove('light-mode');
-        heroSection.classList.add('dark-mode');
-      } else {
-        heroSection.classList.remove('dark-mode');
-        heroSection.classList.add('light-mode');
-      }
-      // Hamburger Menu Functionality
-      const hamburgerMenu = document.getElementById('hamburgerMenu');
-      const navButtons = document.getElementById('navButtons');
+    if (body.classList.contains('dark-mode')) {
+      heroSection.classList.remove('light-mode');
+      heroSection.classList.add('dark-mode');
+    } else {
+      heroSection.classList.remove('dark-mode');
+      heroSection.classList.add('light-mode');
+    }
+    // Hamburger Menu Functionality
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navButtons = document.getElementById('navButtons');
 
-      hamburgerMenu.addEventListener('click', () => {
-        navButtons.classList.toggle('show');
-      });
-
+    hamburgerMenu.addEventListener('click', () => {
+      navButtons.classList.toggle('show');
     });
 
-    // Overlap Effect on Scroll
-    const overlapImages = document.querySelectorAll('.overlap-image');
+  });
 
-    window.addEventListener('scroll', () => {
-      overlapImages.forEach(overlapImage => {
-        const scrollPosition = window.scrollY;
-        const overlapImageTop = overlapImage.offsetTop;
-        const overlapImageHeight = overlapImage.offsetHeight;
+  // Remove Overlap Effect code
+  // We no longer need this part as we replaced overlap with parallax
 
-        if (scrollPosition > overlapImageTop - overlapImageHeight / 2) {
-          overlapImage.classList.add('scroll-active');
-        } else {
-          overlapImage.classList.remove('scroll-active');
-        }
-      });
-    });
+  // Remove Parallax Effect using GSAP code
+  // We removed the Parallax Effect using GSAP because we switched to simpler, background-attachment
+
   </script>
 
 </body>
