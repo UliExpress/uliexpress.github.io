@@ -26,14 +26,15 @@
     /* Basic Styles */
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif; /* Use the added font */
+      font-family: 'Helvetica Neue', sans-serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      background-color: #fff; /* Default background color */
-      color: #000;           /* Default text color */
+      background-color: #fff;
+      color: #000;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     /* Header Styles */
     .header {
       display: flex;
@@ -47,204 +48,201 @@
 
     .logo {
       width: 100px;
+      cursor: pointer; /* Make logo a clickable link */
     }
-          .buttons {
-              display: flex;
-              gap: 10px;
-          }
 
-          .button {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 10px 20px;
-              background-color: #fff;
-              color: #000;
-              border: 1px solid #000;
-              border-radius: 20px;
-              text-decoration: none;
-              transition: background-color 0.3s ease, color 0.3s ease;
-          }
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
 
-          .button:hover {
-              background-color: #000;
-              color: #fff;
-          }
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
+    .button:hover {
+      background-color: #000;
+      color: #fff;
+    }
 
-          /* Content Styles */
-          .container {
-              text-align: center;
-              padding: 20px;
-              flex-grow: 1;
-          }
+    /* Content Styles */
+    .container {
+      text-align: center;
+      padding: 20px;
+      flex-grow: 1;
+    }
 
-          /* Update photo-grid to hold one large image */
-          .photo-grid {
-              display: flex;
-              justify-content: center;
-              margin: 20px 0;
-          }
+    .photo-grid {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
 
-          .photo-grid img {
-              width: 100%;
-              max-width: 900px;
-              height: 400px;
-              object-fit: cover;
-              border-radius: 10px;
-          }
+    .photo-grid img {
+      width: 100%;
+      max-width: 900px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
 
-          .btn {
-              display: inline-block;
-              padding: 15px 30px;
-              font-size: 18px;
-              color: white;
-              background-color: #007bff;
-              border: none;
-              border-radius: 50px;
-              text-decoration: none;
-              transition: transform 0.3s ease;
-              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-          }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
 
-          .btn:hover {
-              transform: scale(1.1);
-              box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-          }
+    /* Footer Styles */
+    footer {
+      background-color: #f0f0f0;
+      padding: 10px;
+      text-align: left;
+      box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
 
-          /* Footer Styles */
-          footer {
-              background-color: #f0f0f0;
-              padding: 10px;
-              text-align: left;
-              box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-              width: 100%;
-          }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+    }
 
-          .footer-content {
-              display: flex;
-              flex-wrap: wrap; /* Allow footer content to wrap */
-              align-items: center;
-              justify-content: space-between;
-              max-width: 960px;
-              margin: 0 auto;
-          }
+    .logo img {
+      height: 30px;
+    }
 
-          .logo img {
-              height: 30px;
-          }
+    .contact-info {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
 
-          .contact-info {
-              font-size: 14px;
-              margin-bottom: 10px; /* Add space below contact info */
-          }
+    .copyright {
+      font-size: 12px;
+    }
 
-          .copyright {
-              font-size: 12px;
-          }
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
 
-          /* Dark Mode Styles */
-          body.dark-mode {
-              background-color: #121212;
-              color: #fff;
-          }
+    .dark-mode .header,
+    .dark-mode .button,
+    .dark-mode footer {
+      background-color: #1f1f1f;
+      color: #fff;
+    }
 
-          .dark-mode .header,
-          .dark-mode .button,
-          .dark-mode footer {
-              background-color: #1f1f1f;
-              color: #fff;
-          }
+    .dark-mode .button {
+      border-color: #fff;
+    }
 
-          .dark-mode .button {
-              border-color: #fff;
-          }
+    .dark-mode .button:hover {
+      background-color: #fff;
+      color: #000;
+    }
 
-          .dark-mode .button:hover {
-              background-color: #fff;
-              color: #000;
-          }
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-          /* Media Query for Mobile Responsiveness */
-          @media (max-width: 768px) {
-              .header {
-                  flex-direction: column; /* Stack header elements vertically */
-                  align-items: flex-start;
-              }
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
 
-              .buttons {
-                  flex-direction: column; /* Stack buttons vertically */
-                  align-items: center;
-                  margin-top: 10px; /* Add space above buttons */
-              }
+      .button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
 
-              .button {
-                  width: 100%; /* Make buttons full width */
-                  margin-bottom: 10px; /* Add space between buttons */
-              }
+      .photo-grid {
+        justify-content: center;
+      }
 
-              .photo-grid {
-                  justify-content: center; /* Center images */
-              }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
 
-              .footer-content {
-                  flex-direction: column; /* Stack footer content vertically */
-                  text-align: center; /* Center footer text */
-              }
+      .contact-info {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+    <div class="buttons">
+      <a href="https://uliexpress.co/services" class="button">Our Services</a>
+      <a href="https://uliexpress.co/us" class="button">About Us</a>
+      <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
+      <button id="darkModeToggle" class="button">Toggle Dark Mode</button>
+    </div>
+  </header>
 
-              .contact-info {
-                  margin-bottom: 20px; /* Add space below contact info */
-              }
-          }
-        </style>
-    </head>
-    <body>
-        <header class="header">
-            <div class="logo">
-                <img src="images/uliexpress.png" alt="Logo">
-            </div>
-            <div class="buttons">
-                <a href="https://uliexpress.co/services" class="button">Our Services</a>
-                <a href="https://uliexpress.co/us" class="button">About Us</a>
-                <a href="https://uliexpress.co/contact" class="button">Contact Us</a>
-                <button id="darkModeToggle" class="button">Toggle Dark Mode</button>
-            </div>
-        </header>
+  <div class="container">
+    <p style="font-weight: 900;">What's longer than 165 inches, has a large size-to-weight ratio, or weighs more than 150 pounds? According to many parcel carriers, it is an oversized item. Each carrier has specific metrics for what they consider "big and bulky," "oversized," or "substandard," which can be bad news for merchants and their customers. That's because oversized items often cost more to ship, take longer to arrive, and come with all kinds of extra fees, penalties, and hassles—and that doesn't even make me want to return large items via normal shipping channels. Oversupply can be a mystery. If you can't see this information, it's hard to promise customers timely receipt and a fair price. Often, retailers don't offer to ship oversized items at all, which means customer frustration and lost sales. Here are some insights into why oversize shipping is different and how you can overcome these challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or something else, it's possible to skip oversized shipping and move those big items:</p>
 
-        <div class="container">
-            <p>What's longer than 165 inches, has a large size-to-weight ratio, or weighs more than 150 pounds? According to many parcel carriers, it is an oversized item. Each carrier has specific metrics for what they consider "big and bulky," "oversized," or "substandard," which can be bad news for merchants and their customers. That's because oversized items often cost more to ship, take longer to arrive, and come with all kinds of extra fees, penalties, and hassles—and that doesn't even make me want to return large items via normal shipping channels. Oversupply can be a mystery. If you can't see this information, it's hard to promise customers timely receipt and a fair price. Often, retailers don't offer to ship oversized items at all, which means customer frustration and lost sales. Here are some insights into why oversize shipping is different and how you can overcome these challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or something else, it's possible to skip oversized shipping and move those big items..</p>
+    <div class="photo-grid">
+      <img src="images/SF.jpg" alt="The Area">
+    </div>
 
-            <div class="photo-grid">
-                <img src="images/SF.jpg" alt="The Area">
-            </div>
+    <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+  </div>
 
-            <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
-        </div>
+  <footer>
+    <div class="footer-content">
+      <div class="logo">
+        <img src="images/uliexpress.png" alt="UliExpressLogo">
+      </div>
+      <div class="contact-info">
+        <p>Uli Express, Inc.</p>
+        <p>Email: support@uliexpress.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+      <div class="copyright">
+        &copy; 2024 Uli Express, Inc.
+      </div>
+    </div>
+  </footer>
 
-        <footer>
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="images/uliexpress.png" alt="UliExpressLogo">
-                </div>
-                <div class="contact-info">
-                    <p>Uli Express, Inc.</p>
-                    <p>Email: support@uliexpress.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
-                </div>
-                <div class="copyright">
-                    &copy; 2024 Uli Express, Inc.
-                </div>
-            </div>
-        </footer>
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-        <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-            });
-        </script>
-    </body>
-    </html>
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
