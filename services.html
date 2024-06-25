@@ -279,8 +279,8 @@
   /* Dark Mode Icon */
   #darkModeToggle {
     background: none; /* Remove button background */
-    border: none;  /* Remove button border */
-    padding: 10px;  /* Adjust padding as needed */
+    border: none; /* Remove button border */
+    padding: 10px; /* Adjust padding as needed */
   }
 
   #darkModeToggle img {
@@ -331,6 +331,7 @@
     object-fit: cover;
     z-index: -1;
     opacity: 0.3; /* Adjust opacity as needed */
+    transition: transform 0.5s ease;
   }
 
   /* Style for the overlap image on scroll */
@@ -366,29 +367,47 @@
   </section>
 
   <div class="overlap-container">
-    <div class="overlap-image" style="background-image: url('images/service-bg.jpg');"></div>
+    <div class="overlap-image" style="background-image: url('images/showcase1.jpg');"></div>
     <div class="overlap-content">
       <div class="services-section">
         <h2>Our Services</h2>
         <p>Uli Express offers a variety of services to meet your delivery needs. We specialize in:</p>
-        <div class="service-items">
-          <div class="service-item">
-            <h3>Same-Day Delivery</h3>
-            <p>Get your items delivered quickly and efficiently within the same day.</p>
-          </div>
-          <div class="service-item">
-            <h3>Scheduled Delivery</h3>
-            <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
-          </div>
-          <div class="service-item">
-            <h3>Oversized Item Delivery</h3>
-            <p>We handle large and bulky items with care and expertise.</p>
-          </div>
-          <div class="service-item">
-            <h3>White Glove Delivery</h3>
-            <p>Enjoy a premium delivery experience with unpacking, assembly, and removal of packaging.</p>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlap-container">
+    <div class="overlap-image" style="background-image: url('images/showcase2.jpg');"></div>
+    <div class="overlap-content">
+      <div class="services-section">
+        <p>Get your items delivered quickly and efficiently within the same day.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlap-container">
+    <div class="overlap-image" style="background-image: url('images/showcase3.jpg');"></div>
+    <div class="overlap-content">
+      <div class="services-section">
+        <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlap-container">
+    <div class="overlap-image" style="background-image: url('images/showcase4.jpg');"></div>
+    <div class="overlap-content">
+      <div class="services-section">
+        <p>We handle large and bulky items with care and expertise.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlap-container">
+    <div class="overlap-image" style="background-image: url('images/showcase5.jpg');"></div>
+    <div class="overlap-content">
+      <div class="services-section">
+        <p>Enjoy a premium delivery experience with unpacking, assembly, and removal of packaging.</p>
       </div>
     </div>
   </div>
@@ -435,18 +454,20 @@
     });
 
     // Overlap Effect on Scroll
-    const overlapImage = document.querySelector('.overlap-image');
+    const overlapImages = document.querySelectorAll('.overlap-image');
 
     window.addEventListener('scroll', () => {
-      const scrollPosition = window.scrollY;
-      const overlapImageTop = overlapImage.offsetTop;
-      const overlapImageHeight = overlapImage.offsetHeight;
+      overlapImages.forEach(overlapImage => {
+        const scrollPosition = window.scrollY;
+        const overlapImageTop = overlapImage.offsetTop;
+        const overlapImageHeight = overlapImage.offsetHeight;
 
-      if (scrollPosition > overlapImageTop - overlapImageHeight / 2) {
-        overlapImage.classList.add('scroll-active');
-      } else {
-        overlapImage.classList.remove('scroll-active');
-      }
+        if (scrollPosition > overlapImageTop - overlapImageHeight / 2) {
+          overlapImage.classList.add('scroll-active');
+        } else {
+          overlapImage.classList.remove('scroll-active');
+        }
+      });
     });
   </script>
 
