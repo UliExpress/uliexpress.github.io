@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UliExpress</title>
-    <style>
-        @font-face {
-            font-family: 'Helvetica Neue';
-            src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-                url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UliExpress</title>
+  <style>
+    @font-face {
+      font-family: 'Helvetica Neue';
+      src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+           url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
 
-        @font-face {
-            font-family: 'Helvetica Neue';
-            src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-                url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
+    @font-face {
+      font-family: 'Helvetica Neue';
+      src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+           url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
 
-        /* Basic Styles */
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', sans-serif; /* Use the added font */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #fff; /* Default background color */
-            color: #000;             /* Default text color */
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-          }
+    /* Basic Styles */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif; /* Use the added font */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fff; /* Default background color */
+      color: #000;           /* Default text color */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
 
-          /* Header Styles */
-          .header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 10px 20px;
-              background-color: #000;
-              color: #fff;
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          }
-
-          .logo {
-              width: 100px;
-          }
-
+    .logo {
+      width: 100px;
+    }
           .buttons {
               display: flex;
               gap: 10px;
