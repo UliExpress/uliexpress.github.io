@@ -31,7 +31,7 @@
       flex-direction: column;
       min-height: 100vh;
       background-color: #fff;
-      color: #000;
+      color: #000; /* Set initial text color to black */
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -48,7 +48,7 @@
 
     .logo {
       width: 100px;
-      cursor: pointer; /* Make logo a clickable link */
+      cursor: pointer;
     }
 
     .buttons {
@@ -208,20 +208,13 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      /* Remove the color: #fff here */
     }
 
     .hero h1 {
       font-size: 3em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Apply color change for heading in dark mode */
-    @media (prefers-color-scheme: dark) {
-      .hero h1 {
-        color: white;
-      }
+      color: #fff; /* Set hero text color to white */
     }
   </style>
 </head>
@@ -261,39 +254,7 @@
       </div>
     </div>
   </footer>
-  /* Hero Section Styles */
-  .hero {
-    background-image: url('images/SF.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* Remove the color: #fff here */
-  }
 
-  .hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  /* ... your existing CSS ... */
-
-  /* Basic Styles */
-  body {
-    margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #fff;
-    color: #fff; /* Add color: #fff here */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
   <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
