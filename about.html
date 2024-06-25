@@ -53,6 +53,10 @@
       cursor: pointer;
     }
 
+    .logo img {
+      height: 30px;
+    }
+
     .buttons {
       display: flex;
       gap: 10px;
@@ -96,10 +100,6 @@
       justify-content: space-between;
       max-width: 960px;
       margin: 0 auto;
-    }
-
-    .logo img {
-      height: 30px;
     }
 
     .contact-info {
@@ -174,11 +174,12 @@
 </head>
 <body>
   <header class="header">
-    <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
+    <a href="#home" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
     <div class="buttons">
-      <a href="#" class="button">Sign Up</a>
-      <a href="#" class="button">Log In</a>
-      <button id="darkModeToggle">Toggle Light</button>
+      <a href="https://uliexpress.co/#/services" class="button">Our Services</a>
+      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+      <a href="https://uliexpress.co/#/contact" class="button">Contact Us</a>
+      <button id="darkModeToggle" class="button">Toggle Light</button>
     </div>
   </header>
 
