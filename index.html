@@ -200,7 +200,7 @@
 
     /* Hero Section Styles */
     .hero {
-      background-image: url('images/SF.jpg'); /* Replace with your image path */
+      background-image: url('images/SF.jpg');
       background-size: cover;
       background-position: center;
       min-height: 400px;
@@ -208,13 +208,13 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      /* Remove the color: #fff here */
     }
 
     .hero h1 {
       font-size: 3em;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     /* Apply color change for heading in dark mode */
@@ -261,7 +261,39 @@
       </div>
     </div>
   </footer>
+  /* Hero Section Styles */
+  .hero {
+    background-image: url('images/SF.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Remove the color: #fff here */
+  }
 
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ... your existing CSS ... */
+
+  /* Basic Styles */
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    color: #fff; /* Add color: #fff here */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
   <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
