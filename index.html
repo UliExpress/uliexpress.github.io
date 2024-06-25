@@ -31,8 +31,9 @@
       flex-direction: column;
       min-height: 100vh;
       background-color: #fff;
-      color: #000; /* Set initial text color to black */
+      color: #000;
       transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden; /* Prevent side scrolling */
     }
 
     /* Header Styles */
@@ -96,18 +97,17 @@
     }
 
     .btn {
- display: inline-block;
- padding: 15px 30px;
- font-size: 18px;
- color: white;
- background-color: #c21010; /* Updated button color */
- border: none;
- border-radius: 50px;
- text-decoration: none;
- transition: transform 0.3s ease;
- box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #c21010;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
 
     .btn:hover {
       transform: scale(1.1);
@@ -167,6 +167,25 @@
       color: #000;
     }
 
+    /* Hero Section Styles */
+    .hero {
+      background-image: url('images/SF.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+
     /* Media Query for Mobile Responsiveness */
     @media (max-width: 768px) {
       .header {
@@ -197,25 +216,10 @@
       .contact-info {
         margin-bottom: 20px;
       }
-    }
 
-    /* Hero Section Styles */
-    .hero {
-      background-image: url('images/SF.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      color: #fff; /* Set hero text color to white */
+      .hero h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
@@ -264,5 +268,6 @@
       body.classList.toggle('dark-mode');
     });
   </script>
+
 </body>
 </html>
