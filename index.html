@@ -415,6 +415,24 @@ window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.display = 'none';
 });
+
+    // Loading Screen
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+
+      // After a few seconds, fade out the loading screen
+      setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        // Remove the loading screen from the DOM after the transition ends
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500); // 500ms matches the transition duration
+      }, 3000); // Adjust the delay (in milliseconds) as needed
+    });
+  </script>
+</body>
+</html>
+
 </script>
 
 </body>
