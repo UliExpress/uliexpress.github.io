@@ -150,7 +150,7 @@
     font-size: 12px;
   }
 
-  /* Dark Mode Styles */
+  /* Dark Mode Styles (Modified for consistency) */
   body.dark-mode {
     background-color: #121212;
     color: #fff;
@@ -172,7 +172,7 @@
     color: #000;
   }
 
-  /* Hero Section Styles */
+  /* Hero Section Styles (Modified for consistency) */
   .hero {
     background-size: cover;
     background-position: center;
@@ -181,20 +181,19 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
-
-  .hero.light-mode {
-    background-image: url('images/SFday.jpg');
+    /* Ensure the hero background is consistent in both modes */
+    background-image: url('images/SFday.jpg'); /* Use day image by default */
   }
 
   .hero.dark-mode {
-    background-image: url('images/SFnight.jpg');
+    background-image: url('images/SFnight.jpg'); /* Use night image in dark mode */
   }
 
   /* Apply text stroke only in dark mode */
-  body.dark-mode .hero h1 {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
+    body.dark-mode .hero h1 {
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
 
   /* Media Query for Mobile Responsiveness */
   @media (max-width: 768px) {
@@ -367,78 +366,86 @@
     <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
 
     <!-- Hamburger Menu -->
-    <div class="hamburger-menu" id="hamburgerMenu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div class="buttons" id="navButtons">
+    <a href="services.html" class="button">Our Services</a>
+    <a href="about.html" class="button">About Us</a>
+    <a href="contact.html" class="button">Contact Us</a>
+    <button id="darkModeToggle" class="button">
+      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Local Bay Area drivers servicing your schedule or on demand delivery needs</h1>
+</section>
+
+<section style="background-image: url('images/showcase1.jpg');">
+  <h1>Same Day Delivery</h1>
+  <div class="services-section">
+    <p>Get your items delivered quickly and efficiently within the same day.</p>
+  </div>
+</section>
+
+<section style="background-image: url('images/showcase2.jpg');">
+  <h1>Scheduled Delivery</h1>
+  <div class="services-section">
+    <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
+  </div>
+</section>
+
+<section style="background-image: url('images/showcase3.jpg');">
+  <h1>Large Item Delivery</h1>
+  <div class="services-section">
+    <p>We handle large and bulky items with care and expertise.</p>
+  </div>
+</section>
+
+<section style="background-image: url('images/showcase4.jpg');">
+  <h1>Rapid Service</h1>
+  <div class="services-section">
+    <p>We're here for when speed matters most. That's express.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="logo">
+      <img src="images/uliexpress.png" alt="UliExpressLogo">
     </div>
-
-    <div class="buttons" id="navButtons">
-      <a href="services.html" class="button">Our Services</a>
-      <a href="about.html" class="button">About Us</a>
-      <a href="contact.html" class="button">Contact Us</a>
-      <button id="darkModeToggle" class="button">
-        <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-      </button>
+    <div class="contact-info">
+      <p>Uli Express, Inc.</p>
+      <p>Email: support@uliexpress.com</p> /*Keep this email*/
+      <p>Phone: +1 (628) 282-0552</p>
     </div>
-  </header>
-
-  <section class="hero light-mode">
-    <h1>Local Bay Area drivers servicing your schedule or on demand delivery needs</h1>
-  </section>
-
-  <section style="background-image: url('images/showcase1.jpg');">
-    <h1>Same Day Delivery</h1>
-    <div class="services-section">
-      <p>Get your items delivered quickly and efficiently within the same day.</p>
+    <div class="copyright">
+      &copy; 2024 Uli Express, Inc.
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section style="background-image: url('images/showcase2.jpg');">
-    <h1>Scheduled Delivery</h1>
-    <div class="services-section">
-      <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
-    </div>
-  </section>
+<script>
 
-  <section style="background-image: url('images/showcase3.jpg');">
-    <h1>Large Item Delivery</h1>
-    <div class="services-section">
-      <p>We handle large and bulky items with care and expertise.</p>
-    </div>
-  </section>
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const heroSection = document.querySelector('.hero');
 
-  <section style="background-image: url('images/showcase4.jpg');">
-    <h1>Rapid Service</h1>
-    <div class="services-section">
-      <p>We're here for when speed matters most. That's express.</p>
-    </div>
-  </section>
+darkModeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
 
-  <footer>
-    <div class="footer-content">
-      <div class="logo">
-        <img src="images/uliexpress.png" alt="UliExpressLogo">
-      </div>
-      <div class="contact-info">
-        <p>Uli Express, Inc.</p>
-        <p>Email: support@uliexpress.com</p> /*Keep this email*/
-        <p>Phone: +1 (628) 282-0552</p>
-      </div>
-      <div class="copyright">
-        &copy; 2024 Uli Express, Inc.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  const heroSection = document.querySelector('.hero');
-
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+  // Toggle hero background image based on dark mode
+  if (body.classList.contains('dark-mode')) {
+    heroSection.classList.add('dark-mode');
+  } else {
+    heroSection.classList.remove('dark-mode');
+  }
+});
 
     if (body.classList.contains('dark-mode')) {
       heroSection.classList.remove('light-mode');
@@ -455,15 +462,7 @@
       navButtons.classList.toggle('show');
     });
 
-  });
+    </script>
 
-  // Remove Overlap Effect code
-  // We no longer need this part as we replaced overlap with parallax
-
-  // Remove Parallax Effect using GSAP code
-  // We removed the Parallax Effect using GSAP because we switched to simpler, background-attachment
-
-  </script>
-
-</body>
-</html>
+  </body>
+  </html>
