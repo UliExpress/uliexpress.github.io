@@ -289,35 +289,35 @@
     }
 
     /* Loading Screen Styles */
-     #loading-screen {
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       background-color: #fff;
-       z-index: 9999;
-       transition: opacity 0.5s ease-in-out; /* Add a transition for smooth fading */
-     }
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      z-index: 9999;
+      transition: opacity 0.5s ease-in-out;
+    }
 
-     #loading-screen.fade-out {
-       opacity: 0; /* Make the loading screen transparent when fading out */
-     }
+    #loading-screen.fade-out {
+      opacity: 0;
+    }
 
-     #loading-screen img {
-       width: 100px;
-     }
-   </style>
- </head>
- <body>
+    #loading-screen img {
+      width: 100px;
+    }
+    </style>
+  </head>
+  <body>
 
-   <!-- Loading Screen -->
-   <div id="loading-screen">
-     <img src="images/uliexpress.png" alt="UliExpress Logo">
-   </div>
+    <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="images/uliexpress.png" alt="UliExpress Logo">
+  </div>
 
    <header class="header">
      <a href="#home" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
@@ -407,28 +407,15 @@ hamburgerMenu.addEventListener('click', () => {
 // Loading Screen
 window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.display = 'none';
-});
-</script>
-// Loading Screen
-window.addEventListener('load', () => {
-  const loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.display = 'none';
+
+  setTimeout(() => {
+    loadingScreen.classList.add('fade-out');
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 500);
+  }, 3000);
 });
 
-    // Loading Screen
-    window.addEventListener('load', () => {
-      const loadingScreen = document.getElementById('loading-screen');
-
-      // After a few seconds, fade out the loading screen
-      setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        // Remove the loading screen from the DOM after the transition ends
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-        }, 500); // 500ms matches the transition duration
-      }, 3000); // Adjust the delay (in milliseconds) as needed
-    });
   </script>
 </body>
 </html>
