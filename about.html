@@ -112,72 +112,76 @@
     }
 
     /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #fff;
-    }
+  body.dark-mode {
+    background-color: #121212; /* Dark mode background */
+    color: #fff; /* Dark mode text color */
+  }
 
-    .dark-mode .header,
-    .dark-mode .button,
-    .dark-mode footer {
-      background-color: #1f1f1f;
-      color: #fff;
-    }
+  .dark-mode .header,
+  .dark-mode .button,
+  .dark-mode footer {
+    background-color: #1f1f1f; /* Dark mode background for these elements */
+    color: #fff; /* Dark mode text color for these elements */
+  }
 
-    .dark-mode .button {
-      border-color: #fff;
-    }
+  .dark-mode .button {
+    border-color: #fff; /* Dark mode border color for buttons */
+  }
 
-    .dark-mode .button:hover {
-      background-color: #fff;
-      color: #000;
-    }
+  .dark-mode .button:hover {
+    background-color: #fff; /* Dark mode hover background for buttons */
+    color: #000; /* Dark mode hover text color for buttons */
+  }
 
-    /* Location List Styles */
-    .location-list {
-      text-align: center;
-      margin-top: 20px;
-    }
+  /* Location List Styles */
+  .location-list {
+    text-align: center;
+    margin-top: 20px;
+  }
 
-    .location-list h2 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
+  .location-list h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
 
-    .location-list ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+  .location-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .location-list li {
-      margin: 5px;
-      padding: 10px 20px;
-      background-color: #f0f0f0;
-      border-radius: 5px;
-      font-weight: 500;
-      /* Make the location list items visible in dark mode */
-      color: #000; /* Set text color to black for visibility */
-    }
+  /* Ensure consistent styling for location list items */
+  .location-list li {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+  }
 
-    .location-list li.bold {
-      font-weight: bold;
-    }
+  .location-list li.bold {
+    font-weight: bold;
+  }
 
-    /* Style for the main content area */
-    main {
-      flex-grow: 1; /* Allow main content to take up available space */
-      padding: 20px; /* Add some padding around the content */
-    }
+  /* Light mode styling for location list items */
+  .location-list li {
+    background-color: #f0f0f0; /* Light mode background */
+    color: #000; /* Light mode text color */
+  }
 
-    /* Dark mode styles for location list items */
-    .dark-mode .location-list li {
-      background-color: #333; /* Dark background for contrast */
-      color: #fff; /* White text for readability */
-    }
+  /* Dark mode styling for location list items */
+  .dark-mode .location-list li {
+    background-color: #333; /* Dark mode background */
+    color: #fff; /* Dark mode text color */
+  }
+
+  /* Style for the main content area */
+  main {
+    flex-grow: 1; /* Allow main content to take up available space */
+    padding: 20px; /* Add some padding around the content */
+  }
   </style>
 </head>
 <body>
