@@ -168,7 +168,7 @@
     <div class="buttons">
       <a href="#" class="button">Sign Up</a>
       <a href="#" class="button">Log In</a>
-      <button id="darkModeToggle">Dark Mode</button>
+      <button id="darkModeToggle">Toggle Light</button>
     </div>
   </header>
 
@@ -216,3 +216,21 @@
   </footer>
 </body>
 </html>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const heroSection = document.querySelector('.hero');
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            heroSection.classList.remove('light-mode');
+            heroSection.classList.add('dark-mode');
+        } else {
+            heroSection.classList.remove('dark-mode');
+            heroSection.classList.add('light-mode');
+        }
+    });
+</script>
