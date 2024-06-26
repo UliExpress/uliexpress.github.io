@@ -246,83 +246,83 @@
     }
 
     /* Hamburger Menu Styles */
-  .hamburger-menu {
-    display: none; /* Hide by default on larger screens */
-    cursor: pointer;
-    padding: 10px;
-  }
+      .hamburger-menu {
+        display: none; /* Hide by default on larger screens */
+        cursor: pointer;
+        padding: 10px;
+      }
 
-  .hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #fff;
-    transition: 0.3s ease;
-  }
+      .hamburger-menu .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #fff;
+        transition: 0.3s ease;
+      }
 
-  /* Show hamburger menu on smaller screens */
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;
-    }
+      .hamburger-menu.show .bar:first-child {
+        transform: translateY(8px) rotate(45deg);
+      }
 
-    .buttons {
-      display: none; /* Hide the regular buttons */
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      text-align: center;
-      padding: 10px 0;
-    }
+      .hamburger-menu.show .bar:nth-child(2) {
+        opacity: 0;
+      }
 
-    .buttons.show {
-      display: flex;
-    }
+      .hamburger-menu.show .bar:last-child {
+        transform: translateY(-8px) rotate(-45deg);
+      }
 
-    .button {
-      margin: 10px 0;
-    }
-  }
+      /* Show hamburger menu and hide buttons on smaller screens */
+      @media (max-width: 768px) {
+        .hamburger-menu {
+          display: block;
+        }
 
-  /* Dark Mode Icon */
-  #darkModeToggle {
-    background: none; /* Remove button background */
-    border: none;  /* Remove button border */
-    padding: 10px;  /* Adjust padding as needed */
-  }
+        .buttons {
+          display: none; /* Hide the regular buttons */
+          flex-direction: column;
+          position: absolute;
+          top: 60px; /* Adjust based on header height */
+          left: 0;
+          width: 100%;
+          background-color: #000;
+          text-align: center;
+          padding: 10px 0;
+          z-index: 10; /* Ensure menu appears on top */
+        }
 
-  #darkModeToggle img {
-    width: 24px; /* Adjust icon size as needed */
-    height: 24px;
-  }
+        .buttons.show {
+          display: flex;
+        }
 
-  </style>
-</head>
-<body>
+        .button {
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
 
-  <header class="header">
-    <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+    <header class="header">
+      <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu" id="hamburgerMenu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
 
-    <div class="buttons" id="navButtons">
-      <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-      <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
-      <button id="darkModeToggle" class="button">
-        <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-      </button>
-    </div>
-  </header>
+      <div class="buttons" id="navButtons">
+        <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
+        <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+        <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+        <button id="darkModeToggle" class="button">
+          <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+        </button>
+      </div>
+    </header>
 
   <section class="hero light-mode">
     <h1>Fast & Reliable Delivery Solutions</h1>
@@ -374,15 +374,15 @@
         heroSection.classList.add('light-mode');
       }
       // Hamburger Menu Functionality
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const navButtons = document.getElementById('navButtons');
+      const hamburgerMenu = document.getElementById('hamburgerMenu');
+      const navButtons = document.getElementById('navButtons');
 
-hamburgerMenu.addEventListener('click', () => {
-  navButtons.classList.toggle('show');
-});
+      hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('show'); // Toggle the 'show' class
+        navButtons.classList.toggle('show');
+      });
 
-    });
-  </script>
+    </script>
 
-</body>
-</html>
+  </body>
+  </html>
