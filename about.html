@@ -1,388 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | UliExpress</title>
-  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Home | UliExpress</title>
+ <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
+ <style>
+
+ @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+ }
 
   @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-    url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+   font-family: 'Helvetica Neue';
+   src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+   url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
   }
 
-    @font-face {
-      font-family: 'Helvetica Neue';
-      src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-      url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
+  /* Basic Styles */
+  body {
+   margin: 0;
+   font-family: 'Helvetica Neue', sans-serif;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: #fff;
+   color: #000;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   overflow-x: hidden;
+  }
 
-    /* Basic Styles */
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: #fff;
-      color: #000;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      overflow-x: hidden;
-    }
+  /* Header Styles */
+  .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 20px;
+   background-color: #000;
+   color: #fff;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
 
-    /* Header Styles */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #000;
-      color: #fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
+  .logo {
+   width: 100px;
+   cursor: pointer;
+  }
 
-    .logo {
-      width: 100px;
-      cursor: pointer;
-    }
+  .buttons {
+   display: flex;
+   gap: 10px;
+  }
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-    }
+  .button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 20px;
+   background-color: #fff;
+   color: #000;
+   border: 1px solid #000;
+   border-radius: 20px;
+   text-decoration: none;
+   transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-    .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+  .button:hover {
+   background-color: #000;
+   color: #fff;
+  }
 
-    .button:hover {
-      background-color: #000;
-      color: #fff;
-    }
+  /* Content Styles */
+  .container {
+   text-align: center;
+   padding: 20px;
+   flex-grow: 1;
+  }
 
-    /* Content Styles */
-    .container {
-      text-align: center;
-      padding: 20px;
-      flex-grow: 1;
-    }
+  .photo-grid {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin: 20px 0;
+  }
 
-    .photo-grid {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
+  .photo-grid img {
+   width: 100%;
+   max-width: 300px;
+   height: auto;
+   object-fit: cover;
+   border-radius: 10px;
+   transition: transform 0.3s ease;
+  }
 
-    .photo-grid img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
+  .photo-grid img:hover {
+   transform: scale(1.1);
+  }
 
-    .photo-grid img:hover {
-      transform: scale(1.1);
-    }
+  /* Big Contact Us Button Styles */
+  .btn {
+   display: inline-block;
+   padding: 15px 30px;
+   font-size: 18px;
+   color: white;
+   background-color: blue;
+   border: none;
+   border-radius: 50px;
+   text-decoration: none;
+   transition: background-color 0.3s ease;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   position: relative;
+   overflow: hidden;
+  }
 
-    /* Big Contact Us Button Styles */
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: blue;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-    }
+  .btn:hover {
+   background-color: darkblue;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
 
-    .btn:hover {
-      background-color: darkblue;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
+  /* Footer Styles */
+  footer {
+   background-color: #f0f0f0;
+   padding: 10px;
+   text-align: left;
+   box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+   width: 100%;
+  }
 
-    /* Footer Styles */
-    footer {
-      background-color: #f0f0f0;
-      padding: 10px;
-      text-align: left;
-      box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-      width: 100%;
-    }
+  .footer-content {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 960px;
+   margin: 0 auto;
+  }
 
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 960px;
-      margin: 0 auto;
-    }
+  .logo img {
+   height: 30px;
+  }
 
-    .logo img {
-      height: 30px;
-    }
+  .contact-info {
+   font-size: 14px;
+   margin-bottom: 10px;
+  }
 
-    .contact-info {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+  .copyright {
+   font-size: 12px;
+  }
 
-    .copyright {
-      font-size: 12px;
-    }
+  /* Dark Mode Styles */
+  body.dark-mode {
+   background-color: #121212;
+   color: #fff;
+  }
 
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #fff;
-    }
+  .dark-mode .header,
+  .dark-mode .button,
+  .dark-mode footer {
+   background-color: #1f1f1f;
+   color: #fff;
+  }
 
-    .dark-mode .header,
-    .dark-mode .button,
-    .dark-mode footer {
-      background-color: #1f1f1f;
-      color: #fff;
-    }
+  .dark-mode .button {
+   border-color: #fff;
+  }
 
-    .dark-mode .button {
-      border-color: #fff;
-    }
+  .dark-mode .button:hover {
+   background-color: #fff;
+   color: #000;
+  }
 
-    .dark-mode .button:hover {
-      background-color: #fff;
-      color: #000;
-    }
+  /* Hero Section Styles */
+  .hero {
+   background-size: cover;
+   background-position: center;
+   min-height: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+  }
 
-    /* Hero Section Styles */
-    .hero {
-      background-size: cover;
-      background-position: center;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+  .hero.light-mode {
+   background-image: url('images/SFday.jpg');
+  }
 
-    .hero.light-mode {
-      background-image: url('images/SFday.jpg');
-    }
+  .hero.dark-mode {
+   background-image: url('images/SFnight.jpg');
+  }
 
-    .hero.dark-mode {
-      background-image: url('images/SFnight.jpg');
-    }
+  /* Apply text stroke only in dark mode */
+  body.dark-mode .hero h1 {
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 
-    /* Apply text stroke only in dark mode */
-    body.dark-mode .hero h1 {
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
+  /* Media Query for Mobile Responsiveness */
+  @media (max-width: 768px) {
+   .header {
+    flex-direction: column;
+    align-items: center; /* Center logo and buttons vertically */
+   }
 
-    /* Media Query for Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: center; /* Center logo and buttons vertically */
-      }
+   .buttons {
+    flex-direction: row; /* Keep buttons in a row */
+    flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 10px;
+   }
 
-      .buttons {
-        flex-direction: row; /* Keep buttons in a row */
-        flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
-        justify-content: center; /* Center buttons horizontally */
-        margin-top: 10px;
-      }
+   .button {
+    width: auto; /* Allow buttons to adjust width based on content */
+    margin: 5px; /* Add some spacing between buttons */
+   }
 
-      .button {
-        width: auto; /* Allow buttons to adjust width based on content */
-        margin: 5px; /* Add some spacing between buttons */
-      }
+   .photo-grid {
+    flex-wrap: wrap; /* Allow photos to wrap onto multiple lines */
+    justify-content: center;
+   }
 
-      .photo-grid {
-        flex-wrap: wrap; /* Allow photos to wrap onto multiple lines */
-        justify-content: center;
-      }
+   .photo-grid img {
+    max-width: 48%; /* Each photo takes up almost half the screen width */
+    margin-bottom: 10px; /* Add spacing between photos */
+   }
 
-      .photo-grid img {
-        max-width: 48%; /* Each photo takes up almost half the screen width */
-        margin-bottom: 10px; /* Add spacing between photos */
-      }
+   .footer-content {
+    flex-direction: column;
+    text-align: center;
+   }
 
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
+   .contact-info {
+    margin-bottom: 20px;
+   }
 
-      .contact-info {
-        margin-bottom: 20px;
-      }
+   .hero h1 {
+    font-size: 2em;
+   }
+  }
 
-      .hero h1 {
-        font-size: 2em;
-      }
-    }
+  /* Hamburger Menu Styles */
+ .hamburger-menu {
+  display: none; /* Hide by default on larger screens */
+  cursor: pointer;
+  padding: 10px;
+ }
 
-    /* Hamburger Menu Styles */
-      .hamburger-menu {
-        display: none; /* Hide by default on larger screens */
-        cursor: pointer;
-        padding: 10px;
-      }
+ .hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+  transition: 0.3s ease;
+ }
 
-      .hamburger-menu .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: #fff;
-        transition: 0.3s ease;
-      }
+ /* Show hamburger menu on smaller screens */
+ @media (max-width: 768px) {
+  .hamburger-menu {
+   display: block;
+  }
 
-      .hamburger-menu.show .bar:first-child {
-        transform: translateY(8px) rotate(45deg);
-      }
+  .buttons {
+   display: none; /* Hide the regular buttons */
+   flex-direction: column;
+   position: absolute;
+   top: 60px; /* Adjust based on header height */
+   left: 0;
+   width: 100%;
+   background-color: #000;
+   text-align: center;
+   padding: 10px 0;
+  }
 
-      .hamburger-menu.show .bar:nth-child(2) {
-        opacity: 0;
-      }
+  .buttons.show {
+   display: flex;
+  }
 
-      .hamburger-menu.show .bar:last-child {
-        transform: translateY(-8px) rotate(-45deg);
-      }
+  .button {
+   margin: 10px 0;
+  }
+ }
 
-      /* Show hamburger menu and hide buttons on smaller screens */
-      @media (max-width: 768px) {
-        .hamburger-menu {
-          display: block;
-        }
+ /* Dark Mode Icon */
+ #darkModeToggle {
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  padding: 10px; /* Adjust padding as needed */
+ }
 
-        .buttons {
-          display: none; /* Hide the regular buttons */
-          flex-direction: column;
-          position: absolute;
-          top: 60px; /* Adjust based on header height */
-          left: 0;
-          width: 100%;
-          background-color: #000;
-          text-align: center;
-          padding: 10px 0;
-          z-index: 10; /* Ensure menu appears on top */
-        }
+ #darkModeToggle img {
+  width: 24px; /* Adjust icon size as needed */
+  height: 24px;
+ }
 
-        .buttons.show {
-          display: flex;
-        }
+ </style>
+</head>
+<body>
 
-        .button {
-          margin: 10px 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
+ <header class="header">
+  <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
 
-    <header class="header">
-      <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
-
-      <!-- Hamburger Menu -->
-      <div class="hamburger-menu" id="hamburgerMenu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <div class="buttons" id="navButtons">
-        <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-        <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-        <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
-        <button id="darkModeToggle" class="button">
-          <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-        </button>
-      </div>
-    </header>
-
-  <section class="hero light-mode">
-    <h1>Fast & Reliable Delivery Solutions</h1>
-  </section>
-
-  <div class="container">
-    <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500; text-align: left;">
-     At UliExpress, we understand the importance of timely and efficient delivery. That's why we offer a range of flexible delivery solutions tailored to meet your specific needs. Whether you require same-day delivery, scheduled deliveries, or on-demand services, our team of experienced drivers is here to assist you.
-    </p>
-
-    <div class="photo-grid">
-      <img src="images/truck.jpg" alt="Photo 1">
-      <img src="images/van.jpg" alt="Photo 2">
-      <img src="images/delivery.jpg" alt="Photo 3">
-    </div>
-
-    <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu" id="hamburgerMenu">
+   <div class="bar"></div>
+   <div class="bar"></div>
+   <div class="bar"></div>
   </div>
 
-  <footer>
-    <div class="footer-content">
-      <div class="logo">
-        <img src="images/uliexpress.png" alt="UliExpressLogo">
-      </div>
-      <div class="contact-info">
-        <p>Uli Express, Inc.</p>
-        <p>Email: support@uliexpress.com</p>
-        <p>Phone: +1 (628) 282-0552</p>
-      </div>
-      <div class="copyright">
-        &copy; 2024 Uli Express, Inc.
-      </div>
-    </div>
-  </footer>
-  <script>
+  <div class="buttons" id="navButtons">
+   <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
+   <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+   <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+   <button id="darkModeToggle" class="button">
+    <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+   </button>
+  </div>
+ </header>
 
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const heroSection = document.querySelector('.hero');
+ <section class="hero light-mode">
+  <h1>Fast & Reliable Delivery Solutions</h1>
+ </section>
 
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
+ <div class="container">
+  <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500; text-align: left;">
+   At UliExpress, we understand the importance of timely and efficient delivery. That's why we offer a range of flexible delivery solutions tailored to meet your specific needs. Whether you require same-day delivery, scheduled deliveries, or on-demand services, our team of experienced drivers is here to assist you.
+  </p>
 
-      if (body.classList.contains('dark-mode')) {
-        heroSection.classList.remove('light-mode');
-        heroSection.classList.add('dark-mode');
-      } else {
-        heroSection.classList.remove('dark-mode');
-        heroSection.classList.add('light-mode');
-      }
-      // Hamburger Menu Functionality
-      const hamburgerMenu = document.getElementById('hamburgerMenu');
-      const navButtons = document.getElementById('navButtons');
+  <div class="photo-grid">
+   <img src="images/truck.jpg" alt="Photo 1">
+   <img src="images/van.jpg" alt="Photo 2">
+   <img src="images/delivery.jpg" alt="Photo 3">
+  </div>
 
-      hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('show'); // Toggle the 'show' class
-        navButtons.classList.toggle('show');
-      });
+  <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+ </div>
 
-    </script>
+ <footer>
+  <div class="footer-content">
+   <div class="logo">
+    <img src="images/uliexpress.png" alt="UliExpressLogo">
+   </div>
+   <div class="contact-info">
+    <p>Uli Express, Inc.</p>
+    <p>Email: support@uliexpress.com</p>
+    <p>Phone: +1 (628) 282-0552</p>
+   </div>
+   <div class="copyright">
+    &copy; 2024 Uli Express, Inc.
+   </div>
+  </div>
+ </footer>
+ <script>
 
-  </body>
-  </html>
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const heroSection = document.querySelector('.hero');
+
+  darkModeToggle.addEventListener('click', () => {
+   body.classList.toggle('dark-mode');
+
+   if (body.classList.contains('dark-mode')) {
+    heroSection.classList.remove('light-mode');
+    heroSection.classList.add('dark-mode');
+   } else {
+    heroSection.classList.remove('dark-mode');
+    heroSection.classList.add('light-mode');
+   }
+   // Hamburger Menu Functionality
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const navButtons = document.getElementById('navButtons');
+
+hamburgerMenu.addEventListener('click', () => {
+ navButtons.classList.toggle('show');
+});
+
+  });
+ </script>
+
+</body>
+</html>
