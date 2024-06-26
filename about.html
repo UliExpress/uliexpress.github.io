@@ -87,15 +87,21 @@
     .photo-grid {
       display: flex;
       justify-content: center;
+      gap: 20px;
       margin: 20px 0;
     }
 
     .photo-grid img {
       width: 100%;
-      max-width: 900px;
-      height: 400px;
+      max-width: 300px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.1);
     }
 
     /* Big Contact Us Button Styles */
@@ -216,7 +222,13 @@
       }
 
       .photo-grid {
+        flex-wrap: wrap; /* Allow photos to wrap onto multiple lines */
         justify-content: center;
+      }
+
+      .photo-grid img {
+        max-width: 48%; /* Each photo takes up almost half the screen width */
+        margin-bottom: 10px; /* Add spacing between photos */
       }
 
       .footer-content {
@@ -279,8 +291,8 @@
   /* Dark Mode Icon */
   #darkModeToggle {
     background: none; /* Remove button background */
-    border: none;    /* Remove button border */
-    padding: 10px;    /* Adjust padding as needed */
+    border: none;  /* Remove button border */
+    padding: 10px;  /* Adjust padding as needed */
   }
 
   #darkModeToggle img {
@@ -313,27 +325,19 @@
   </header>
 
   <section class="hero light-mode">
-    <h1>Local Bay Area drivers servicing your schedule or on demand delivery needs</h1>
+    <h1>Fast & Reliable Delivery Solutions</h1>
   </section>
 
   <div class="container">
-    <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
-      What's longer than 165 inches, has a large size-to-weight ratio, or weighs
-      more than 150 pounds? According to many parcel carriers, it is an oversized
-      item. Each carrier has specific metrics for what they consider "big and bulky,"
-      "oversized," or "substandard," which can be bad news for merchants and their
-      customers. That's because oversized items often cost more to ship, take
-      longer to arrive, and come with all kinds of extra fees, penalties, and
-      hassles—and that doesn't even make me want to return large items via normal
-      shipping channels. Oversupply can be a mystery. If you can't see this
-      information, it's hard to promise customers timely receipt and a fair
-      price. Often, retailers don't offer to ship oversized items at all,
-      which means customer frustration and lost sales. Here are some insights
-      into why oversize shipping is different and how you can overcome these
-      challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
-      something else, it's possible to skip oversized shipping and move those
-      big items..
+    <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500; text-align: left;">
+     At UliExpress, we understand the importance of timely and efficient delivery. That's why we offer a range of flexible delivery solutions tailored to meet your specific needs. Whether you require same-day delivery, scheduled deliveries, or on-demand services, our team of experienced drivers is here to assist you.
     </p>
+
+    <div class="photo-grid">
+      <img src="images/truck.jpg" alt="Photo 1">
+      <img src="images/van.jpg" alt="Photo 2">
+      <img src="images/delivery.jpg" alt="Photo 3">
+    </div>
 
     <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
   </div>
