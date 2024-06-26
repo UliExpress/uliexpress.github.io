@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UliExpress</title>
-  <link rel="icon" type="image/png" href="images/favicon.png"> <!-- Add favicon link -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
     @font-face {
       font-family: 'Helvetica Neue';
@@ -24,7 +24,6 @@
       font-display: swap;
     }
 
-    /* Basic Styles */
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
@@ -38,29 +37,24 @@
     }
 
     /* Header Styles */
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #000;
-        color: #fff;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        /* Remove height: fit-content; */
-        position: fixed; /* Make the header fixed at the top */
-        width: 100%; /* Make the header take full width */
-        z-index: 100; /* Ensure header stays on top */
-      }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      position: fixed; /* Keep header fixed */
+      top: 0; /* Position at the top of the viewport */
+      width: 100%;
+      z-index: 100;
+    }
 
-      .logo {
-        width: 100px;
-        cursor: pointer;
-      }
-
-      .logo img {
-        max-height: 30px; /* Limit the image height */
-        width: auto; /* Maintain aspect ratio */
-      }
+    .header .logo {
+      max-width: 150px; /* Limit logo size */
+      height: auto; /* Maintain aspect ratio */
+    }
 
     .buttons {
       display: flex;
@@ -68,21 +62,20 @@
     }
 
     .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-      border-radius: 20px;
+      padding: 8px 16px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
       text-decoration: none;
+      font-weight: 500;
       transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     }
 
     .button:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: #fff;
+      color: #000;
     }
 
     /* Footer Styles */
@@ -92,7 +85,6 @@
       text-align: left;
       box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
       width: 100%;
-      /* Add this to push the footer to the bottom */
       position: relative;
       bottom: 0;
       left: 0;
@@ -118,30 +110,31 @@
 
     /* Dark Mode Styles */
     body.dark-mode {
-      background-color: #121212; /* Dark mode background */
-      color: #fff; /* Dark mode text color */
+      background-color: #121212;
+      color: #fff;
     }
 
     .dark-mode .header,
     .dark-mode .button,
     .dark-mode footer {
-      background-color: #1f1f1f; /* Dark mode background for these elements */
-      color: #fff; /* Dark mode text color for these elements */
+      background-color: #1f1f1f;
+      color: #fff;
     }
 
     .dark-mode .button {
-      border-color: #fff; /* Dark mode border color for buttons */
+      border-color: #fff;
     }
 
     .dark-mode .button:hover {
-      background-color: #fff; /* Dark mode hover background for buttons */
-      color: #000; /* Dark mode hover text color for buttons */
+      background-color: #fff;
+      color: #000;
     }
 
     /* Location List Styles */
     .location-list {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 100px; /* Space for fixed header */
+      padding: 20px; /* Add padding to main content */
     }
 
     .location-list h2 {
@@ -158,91 +151,75 @@
       justify-content: center;
     }
 
-    /* Ensure consistent styling for location list items */
     .location-list li {
       margin: 5px;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: 500;
+      background-color: #f0f0f0;
+      color: #000;
     }
 
     .location-list li.bold {
       font-weight: bold;
     }
 
-    /* Light mode styling for location list items */
-    .location-list li {
-      background-color: #f0f0f0; /* Light mode background */
-      color: #000; /* Light mode text color */
-    }
-
-    /* Dark mode styling for location list items */
     .dark-mode .location-list li {
-      background-color: #333; /* Dark mode background */
-      color: #fff; /* Dark mode text color */
+      background-color: #333;
+      color: #fff;
     }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="uliexpress.co" class="logo">
+      <img src="images/uliexpress.png" alt="Logo">
+    </a>
+    <div class="buttons">
+      <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
+      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+      <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+      <button id="darkModeToggle" class="button">
+        Toggle Light
+        <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+      </button>
+    </div>
+  </header>
 
-    /* Style for the main content area */
-    main {
-      flex-grow: 1; /* Allow main content to take up available space */
-      padding: 20px; /* Add some padding around the content */
-    }
-    /* Adjust main content to avoid being hidden by header */
-      main {
-        padding-top: 80px; /* Add top padding equal to header height */
-      }
-    </style>
-  </head>
-  <body>
-    <header class="header">
-      <a href="uliexpress.co" class="logo">
-        <img src="images/uliexpress.png" alt="Logo">
-      </a>
-      <div class="buttons">
-        <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-        <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-        <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
-        <button id="darkModeToggle" class="button">
-          Toggle Light
-          <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-        </button>
+  <main>
+    <section class="location-list">
+      <h2>Driving through the Bay Area</h2>
+      <p>We transport your packages safely and as fast as possible throughout the Bay Area. Inquire us for more details. Locations available:</p>
+      <ul>
+        <li class="bold">San Francisco</li>
+        <li>San Jose</li>
+        <li>Oakland</li>
+        <li>Sacramento</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
+      <div class="contact-info">
+        <p>Contact us at: info@uliexpress.com</p>
+        <p>Phone: +1 (628) 282-0552</p>
       </div>
-    </header>
-
-    <main>
-      <section class="location-list">
-       <h2>Driving through the Bay Area</h2>
-        <p>We transport your packages safely and as fast as possible throughout the Bay Area. Inquire us for more details. Locations available:</p>
-        <ul>
-          <li class="bold">San Francisco</li>
-          <li>San Jose</li>
-          <li>Oakland</li>
-          <li>Sacramento</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
-        <div class="contact-info">
-          <p>Contact us at: info@uliexpress.com</p>
-          <p>Phone: +1 (628) 282-0552</p>
-        </div>
-        <div class="copyright">
-          <p>&copy; 2024 Uli Express, Inc.</p>
-        </div>
+      <div class="copyright">
+        <p>&copy; 2024 Uli Express, Inc.</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      const darkModeToggle = document.getElementById('darkModeToggle');
-      const body = document.body;
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-      darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light' : 'Toggle Dark';
-      });
-    </script>
-  </body>
-  </html>
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light' : 'Toggle Dark';
+    });
+  </script>
+</body>
+</html>
