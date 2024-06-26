@@ -128,7 +128,7 @@
   /* Footer Styles */
   footer {
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 20px; /* Added padding */
     text-align: left;
     box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -190,11 +190,11 @@
   }
 
   .hero.light-mode {
-    background-image: <img src="images/sfday.avif" alt="SFDay">
+    background-image: url("images/sfday.avif"); /* Added url() */
   }
 
   .hero.dark-mode {
-    background-image: <img src="images/sfnight.avif" alt="SFNight">
+    background-image: url("images/sfnight.avif"); /* Added url() */
   }
 
   /* Apply text stroke only in dark mode */
@@ -302,6 +302,15 @@
   /* Center align paragraph text */
   .container p {
     text-align: center;
+  }
+
+  /* Add space between pictures, contact button, and footer */
+  .photo-grid {
+    margin-bottom: 40px; /* Add space between pictures and contact button */
+  }
+
+  .btn {
+    margin-bottom: 40px; /* Add space between contact button and footer */
   }
   </style>
 </head>
