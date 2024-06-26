@@ -233,49 +233,6 @@
       }
     }
 
-    /* Hamburger Menu Styles */
-  .hamburger-menu {
-    display: none; /* Hide by default on larger screens */
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  .hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #fff;
-    transition: 0.3s ease;
-  }
-
-  /* Show hamburger menu on smaller screens */
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;
-    }
-
-    .buttons {
-      display: none; /* Hide the regular buttons */
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    .buttons.show {
-      display: flex;
-    }
-
-    .button {
-      margin: 10px 0;
-    }
-  }
-
   /* Dark Mode Icon */
   #darkModeToggle {
     background: none; /* Remove button background */
@@ -295,12 +252,6 @@
   <header class="header">
     <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu" id="hamburgerMenu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
 
     <div class="buttons" id="navButtons">
       <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
@@ -369,15 +320,7 @@
         heroSection.classList.remove('dark-mode');
         heroSection.classList.add('light-mode');
       }
-      // Hamburger Menu Functionality
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const navButtons = document.getElementById('navButtons');
 
-hamburgerMenu.addEventListener('click', () => {
-  navButtons.classList.toggle('show');
-});
-
-    });
   </script>
 
 </body>
