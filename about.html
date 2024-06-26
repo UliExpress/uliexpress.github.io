@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UliExpress</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Home | UliExpress</title>
+  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
   <style>
-    @font-face {
-      font-family: 'Helvetica Neue';
-      src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-           url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
+
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+    url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
 
     @font-face {
       font-family: 'Helvetica Neue';
       src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-           url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+      url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
       font-weight: 500;
       font-style: normal;
       font-display: swap;
     }
 
+    /* Basic Styles */
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
@@ -45,15 +47,11 @@
       background-color: #000;
       color: #fff;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      position: fixed; /* Keep header fixed */
-      top: 0; /* Position at the top of the viewport */
-      width: 100%;
-      z-index: 100;
     }
 
-    .header .logo {
-      max-width: 150px; /* Limit logo size */
-      height: auto; /* Maintain aspect ratio */
+    .logo {
+      width: 100px;
+      cursor: pointer;
     }
 
     .buttons {
@@ -62,20 +60,63 @@
     }
 
     .button {
-      padding: 8px 16px;
-      background-color: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      border-radius: 20px;
       text-decoration: none;
-      font-weight: 500;
       transition: background-color 0.3s ease, color 0.3s ease;
-      cursor: pointer;
     }
 
     .button:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Content Styles */
+    .container {
+      text-align: center;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .photo-grid {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      max-width: 900px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Big Contact Us Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: blue;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: darkblue;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
 
     /* Footer Styles */
@@ -85,9 +126,6 @@
       text-align: left;
       box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
       width: 100%;
-      position: relative;
-      bottom: 0;
-      left: 0;
     }
 
     .footer-content {
@@ -97,6 +135,10 @@
       justify-content: space-between;
       max-width: 960px;
       margin: 0 auto;
+    }
+
+    .logo img {
+      height: 30px;
     }
 
     .contact-info {
@@ -130,96 +172,213 @@
       color: #000;
     }
 
-    /* Location List Styles */
-    .location-list {
-      text-align: center;
-      margin-top: 100px; /* Space for fixed header */
-      padding: 20px; /* Add padding to main content */
-    }
-
-    .location-list h2 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .location-list ul {
-      list-style: none;
-      padding: 0;
+    /* Hero Section Styles */
+    .hero {
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
+      text-align: center;
     }
 
-    .location-list li {
-      margin: 5px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: 500;
-      background-color: #f0f0f0;
-      color: #000;
+    .hero.light-mode {
+      background-image: url('images/SFday.jpg');
     }
 
-    .location-list li.bold {
-      font-weight: bold;
+    .hero.dark-mode {
+      background-image: url('images/SFnight.jpg');
     }
 
-    .dark-mode .location-list li {
-      background-color: #333;
-      color: #fff;
+    /* Apply text stroke only in dark mode */
+    body.dark-mode .hero h1 {
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center; /* Center logo and buttons vertically */
+      }
+
+      .buttons {
+        flex-direction: row; /* Keep buttons in a row */
+        flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
+        justify-content: center; /* Center buttons horizontally */
+        margin-top: 10px;
+      }
+
+      .button {
+        width: auto; /* Allow buttons to adjust width based on content */
+        margin: 5px; /* Add some spacing between buttons */
+      }
+
+      .photo-grid {
+        justify-content: center;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
+
+    /* Hamburger Menu Styles */
+  .hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  /* Show hamburger menu on smaller screens */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: block;
+    }
+
+    .buttons {
+      display: none; /* Hide the regular buttons */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .buttons.show {
+      display: flex;
+    }
+
+    .button {
+      margin: 10px 0;
+    }
+  }
+
+  /* Dark Mode Icon */
+  #darkModeToggle {
+    background: none; /* Remove button background */
+    border: none;    /* Remove button border */
+    padding: 10px;    /* Adjust padding as needed */
+  }
+
+  #darkModeToggle img {
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px;
+  }
+
   </style>
 </head>
 <body>
+
   <header class="header">
-    <a href="uliexpress.co" class="logo">
-      <img src="images/uliexpress.png" alt="Logo">
-    </a>
-    <div class="buttons">
+    <a href="uliexpress.co" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="buttons" id="navButtons">
       <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
       <a href="https://uliexpress.co/about.html" class="button">About Us</a>
       <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
       <button id="darkModeToggle" class="button">
-        Toggle Light
         <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="location-list">
-      <h2>Driving through the Bay Area</h2>
-      <p>We transport your packages safely and as fast as possible throughout the Bay Area. Inquire us for more details. Locations available:</p>
-      <ul>
-        <li class="bold">San Francisco</li>
-        <li>San Jose</li>
-        <li>Oakland</li>
-        <li>Sacramento</li>
-      </ul>
-    </section>
-  </main>
+  <section class="hero light-mode">
+    <h1>Local Bay Area drivers servicing your schedule or on demand delivery needs</h1>
+  </section>
+
+  <div class="container">
+    <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
+      What's longer than 165 inches, has a large size-to-weight ratio, or weighs
+      more than 150 pounds? According to many parcel carriers, it is an oversized
+      item. Each carrier has specific metrics for what they consider "big and bulky,"
+      "oversized," or "substandard," which can be bad news for merchants and their
+      customers. That's because oversized items often cost more to ship, take
+      longer to arrive, and come with all kinds of extra fees, penalties, and
+      hassles—and that doesn't even make me want to return large items via normal
+      shipping channels. Oversupply can be a mystery. If you can't see this
+      information, it's hard to promise customers timely receipt and a fair
+      price. Often, retailers don't offer to ship oversized items at all,
+      which means customer frustration and lost sales. Here are some insights
+      into why oversize shipping is different and how you can overcome these
+      challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
+      something else, it's possible to skip oversized shipping and move those
+      big items..
+    </p>
+
+    <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+  </div>
 
   <footer>
     <div class="footer-content">
-      <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
+      <div class="logo">
+        <img src="images/uliexpress.png" alt="UliExpressLogo">
+      </div>
       <div class="contact-info">
-        <p>Contact us at: info@uliexpress.com</p>
+        <p>Uli Express, Inc.</p>
+        <p>Email: support@uliexpress.com</p>
         <p>Phone: +1 (628) 282-0552</p>
       </div>
       <div class="copyright">
-        <p>&copy; 2024 Uli Express, Inc.</p>
+        &copy; 2024 Uli Express, Inc.
       </div>
     </div>
   </footer>
-
   <script>
+
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
+    const heroSection = document.querySelector('.hero');
 
     darkModeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
-      darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light' : 'Toggle Dark';
+
+      if (body.classList.contains('dark-mode')) {
+        heroSection.classList.remove('light-mode');
+        heroSection.classList.add('dark-mode');
+      } else {
+        heroSection.classList.remove('dark-mode');
+        heroSection.classList.add('light-mode');
+      }
+      // Hamburger Menu Functionality
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const navButtons = document.getElementById('navButtons');
+
+hamburgerMenu.addEventListener('click', () => {
+  navButtons.classList.toggle('show');
+});
+
     });
   </script>
+
 </body>
 </html>
