@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -307,6 +308,14 @@ section {
  background-attachment: fixed; /* Make background fixed */
 }
 
+/* Style the text container within each section */
+.text-container {
+ background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+ padding: 20px;
+ border-radius: 10px;
+ text-align: center;
+}
+
 h1 {
  color: white;
  text-shadow: 1px 1px 3px black;
@@ -337,31 +346,39 @@ h1 {
 </section>
 
 <section style="background-image: url('images/showcase1.jpg');">
+  <div class="text-container">
 <h1>Same Day Delivery</h1>
 <div class="services-section">
  <p>Get your items delivered quickly and efficiently within the same day.</p>
 </div>
+  </div>
 </section>
 
 <section style="background-image: url('images/showcase2.jpg');">
+  <div class="text-container">
 <h1>Scheduled Delivery</h1>
 <div class="services-section">
  <p>Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
 </div>
+  </div>
 </section>
 
 <section style="background-image: url('images/showcase3.jpg');">
+  <div class="text-container">
 <h1>Large Item Delivery</h1>
 <div class="services-section">
  <p>We handle large and bulky items with care and expertise.</p>
 </div>
+  </div>
 </section>
 
 <section style="background-image: url('images/showcase4.jpg');">
+  <div class="text-container">
 <h1>Rapid Service</h1>
 <div class="services-section">
  <p>We're here for when speed matters most. That's express.</p>
 </div>
+  </div>
 </section>
 
 <footer>
@@ -382,21 +399,28 @@ h1 {
 
 <script>
 
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const heroSection = document.querySelector('.hero');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const heroSection = document.querySelector('.hero');
+  // Select all elements with the class "text-container"
+  const textContainers = document.querySelectorAll('.text-container');
 
-darkModeToggle.addEventListener('click', () => {
-body.classList.toggle('dark-mode');
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
 
-// Toggle hero background image based on dark mode
-if (body.classList.contains('dark-mode')) {
- heroSection.classList.add('dark-mode');
-} else {
- heroSection.classList.remove('dark-mode');
-}
-});
+    // Toggle hero background image based on dark mode
+    if (body.classList.contains('dark-mode')) {
+      heroSection.classList.add('dark-mode');
+    } else {
+      heroSection.classList.remove('dark-mode');
+    }
 
+    // Toggle the 'dark-mode' class on each .text-container
+    textContainers.forEach(container => {
+      container.classList.toggle('dark-mode');
+    });
+  });
+  
  if (body.classList.contains('dark-mode')) {
  heroSection.classList.remove('light-mode');
  heroSection.classList.add('dark-mode');
