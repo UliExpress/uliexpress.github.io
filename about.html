@@ -38,25 +38,29 @@
     }
 
     /* Header Styles */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: fit-content; /* Allow the header to adjust its height based on content */
-  }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        /* Remove height: fit-content; */
+        position: fixed; /* Make the header fixed at the top */
+        width: 100%; /* Make the header take full width */
+        z-index: 100; /* Ensure header stays on top */
+      }
 
-    .logo {
-      width: 100px;
-      cursor: pointer;
-    }
+      .logo {
+        width: 100px;
+        cursor: pointer;
+      }
 
-    .logo img {
-      height: 30px;
-    }
+      .logo img {
+        max-height: 30px; /* Limit the image height */
+        width: auto; /* Maintain aspect ratio */
+      }
 
     .buttons {
       display: flex;
@@ -183,57 +187,62 @@
       flex-grow: 1; /* Allow main content to take up available space */
       padding: 20px; /* Add some padding around the content */
     }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <a href="uliexpress.co" class="logo">
-      <img src="images/uliexpress.png" alt="Logo">
-    </a>
-    <div class="buttons">
-      <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-      <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
-      <button id="darkModeToggle" class="button">Toggle Light
-        <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <section class="location-list">
-      <h2>Driving through the Bay Area</h2>
-      <p>We transport your packages safely and as fast as possible throughout the Bay Area. Inquire us for more details. Locations available:</p>
-      <ul>
-        <li class="bold">San Francisco</li>
-        <li>San Jose</li>
-        <li>Oakland</li>
-        <li>Sacramento</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
-      <div class="contact-info">
-        <p>Contact us at: info@uliexpress.com</p>
-        <p>Phone: +1 (628) 282-0552</p>
+    /* Adjust main content to avoid being hidden by header */
+      main {
+        padding-top: 80px; /* Add top padding equal to header height */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="uliexpress.co" class="logo">
+        <img src="images/uliexpress.png" alt="Logo">
+      </a>
+      <div class="buttons">
+        <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
+        <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+        <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+        <button id="darkModeToggle" class="button">
+          Toggle Light
+          <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+        </button>
       </div>
-      <div class="copyright">
-        <p>&copy; 2024 Uli Express, Inc.</p>
+    </header>
+
+    <main>
+      <section class="location-list">
+       <h2>Driving through the Bay Area</h2>
+        <p>We transport your packages safely and as fast as possible throughout the Bay Area. Inquire us for more details. Locations available:</p>
+        <ul>
+          <li class="bold">San Francisco</li>
+          <li>San Jose</li>
+          <li>Oakland</li>
+          <li>Sacramento</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <img src="images/uliexpress.png" alt="UliExpressLogo" class="logo">
+        <div class="contact-info">
+          <p>Contact us at: info@uliexpress.com</p>
+          <p>Phone: +1 (628) 282-0552</p>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 Uli Express, Inc.</p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
+    <script>
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
 
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light' : 'Toggle Dark';
-    });
-  </script>
-</body>
-</html>
+      darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light' : 'Toggle Dark';
+      });
+    </script>
+  </body>
+  </html>
