@@ -16,228 +16,228 @@
     font-display: swap;
   }
 
-    @font-face {
-      font-family: 'Helvetica Neue';
-      src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-      url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+    url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
 
-    /* Basic Styles */
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: #fff;
-      color: #000;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      overflow-x: hidden;
-    }
+  /* Basic Styles */
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
 
-    /* Header Styles */
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .logo {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  /* Content Styles */
+  .container {
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .photo-grid {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Big Contact Us Button Styles */
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn:hover {
+    background-color: darkblue;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+
+  /* Footer Styles */
+  footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: left;
+    box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .contact-info {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+  }
+
+  .dark-mode .header,
+  .dark-mode .button,
+  .dark-mode footer {
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+
+  .dark-mode .button {
+    border-color: #fff;
+  }
+
+  .dark-mode .button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* Hero Section Styles */
+  .hero {
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero.light-mode {
+    background-image: url("images/sfday.avif");
+  }
+
+  .hero.dark-mode {
+    background-image: url("images/sfnight.avif");
+  }
+
+  /* Apply text stroke only in dark mode */
+  body.dark-mode .hero h1 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  /* Media Query for Mobile Responsiveness */
+  @media (max-width: 768px) {
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #000;
-      color: #fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .logo {
-      width: 100px;
-      cursor: pointer;
+      flex-direction: column;
+      align-items: center; /* Center logo and buttons vertically */
     }
 
     .buttons {
-      display: flex;
-      gap: 10px;
+      flex-direction: row; /* Keep buttons in a row */
+      flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
+      justify-content: center; /* Center buttons horizontally */
+      margin-top: 10px;
     }
 
     .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #000;
-      color: #fff;
-    }
-
-    /* Content Styles */
-    .container {
-      text-align: center;
-      padding: 20px;
-      flex-grow: 1;
+      width: auto; /* Allow buttons to adjust width based on content */
+      margin: 5px; /* Add some spacing between buttons */
     }
 
     .photo-grid {
-      display: flex;
       justify-content: center;
-      margin: 20px 0;
-    }
-
-    .photo-grid img {
-      width: 100%;
-      max-width: 900px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    /* Big Contact Us Button Styles */
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: blue;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn:hover {
-      background-color: darkblue;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-
-    /* Footer Styles */
-    footer {
-      background-color: #f0f0f0;
-      padding: 10px;
-      text-align: left;
-      box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-      width: 100%;
     }
 
     .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .logo img {
-      height: 30px;
-    }
-
-    .contact-info {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .copyright {
-      font-size: 12px;
-    }
-
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #fff;
-    }
-
-    .dark-mode .header,
-    .dark-mode .button,
-    .dark-mode footer {
-      background-color: #1f1f1f;
-      color: #fff;
-    }
-
-    .dark-mode .button {
-      border-color: #fff;
-    }
-
-    .dark-mode .button:hover {
-      background-color: #fff;
-      color: #000;
-    }
-
-    /* Hero Section Styles */
-    .hero {
-      background-size: cover;
-      background-position: center;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       text-align: center;
     }
 
-    .hero.light-mode {
-      background-image: url("images/sfday.avif");
+    .contact-info {
+      margin-bottom: 20px;
     }
 
-    .hero.dark-mode {
-      background-image: url("images/sfnight.avif");
+    .hero h1 {
+      font-size: 2em;
     }
-
-    /* Apply text stroke only in dark mode */
-    body.dark-mode .hero h1 {
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
-
-    /* Media Query for Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: center; /* Center logo and buttons vertically */
-      }
-
-      .buttons {
-        flex-direction: row; /* Keep buttons in a row */
-        flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
-        justify-content: center; /* Center buttons horizontally */
-        margin-top: 10px;
-      }
-
-      .button {
-        width: auto; /* Allow buttons to adjust width based on content */
-        margin: 5px; /* Add some spacing between buttons */
-      }
-
-      .photo-grid {
-        justify-content: center;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-info {
-        margin-bottom: 20px;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-    }
+  }
 
   /* Dark Mode Icon */
   #darkModeToggle {
     background: none; /* Remove button background */
-    border: none;    /* Remove button border */
-    padding: 10px;    /* Adjust padding as needed */
+    border: none;  /* Remove button border */
+    padding: 10px;  /* Adjust padding as needed */
   }
 
   #darkModeToggle img {
@@ -245,11 +245,32 @@
     height: 24px;
   }
 
-  </style>
-</head>
-<body>
+  /* Location List Styles */
+  .location-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Add some spacing below the list */
+  }
 
-</style>
+  .location-list span {
+    font-size: 14px;
+    color: #666; /* Slightly lighter color for the locations */
+  }
+
+  /* Media Query for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .location-list {
+      flex-direction: column; /* Stack locations vertically on mobile */
+      align-items: flex-start; /* Align items to the left */
+    }
+
+    .location-list span {
+      margin-bottom: 5px; /* Add spacing between locations */
+    }
+  }
+  </style>
 </head>
 <body>
 
@@ -286,11 +307,20 @@
     into why oversize shipping is different and how you can overcome these
     challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
     something else, it's possible to skip oversized shipping and move those
-    big items..
+    big items.
   </p>
 
   <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
 </div>
+
+<div class="location-list">
+  <span>Available in:</span>
+  <span>San Francisco</span>
+  <span>San Jose</span>
+  <span>Oakland</span>
+  <span>Sacramento</span>
+</div>
+
 
 <footer>
   <div class="footer-content">
@@ -315,7 +345,7 @@ const heroSection = document.querySelector('.hero');
 
 darkModeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
-  heroSection.classList.toggle('dark-mode'); // Toggle only the 'dark-mode' class on the hero section
+  heroSection.classList.toggle('dark-mode');
 });
 
 </script>
