@@ -80,7 +80,7 @@
   /* Content Styles */
   .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
     padding: 20px;
     flex-grow: 1;
   }
@@ -88,7 +88,7 @@
   .contact-section {
     text-align: center;
     padding: 20px;
-    width: 45%;
+    margin-bottom: 20px; /* Add spacing between sections */
   }
 
   /* Big Contact Us Button Styles */
@@ -197,7 +197,7 @@
     }
 
     .buttons {
-      flex-direction: row; /* Keep buttons in a row */
+      flex-direction: column; /* Stack buttons vertically */
       flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
       justify-content: center; /* Center buttons horizontally */
       margin-top: 10px;

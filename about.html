@@ -86,8 +86,9 @@
 
   .photo-grid {
     display: flex;
+    flex-wrap: wrap; /* Allow photos to wrap on smaller screens */
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     margin: 20px 0;
   }
 
@@ -210,24 +211,22 @@
     }
 
     .buttons {
-      flex-direction: row; /* Keep buttons in a row */
-      flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
-      justify-content: center; /* Center buttons horizontally */
+      flex-direction: column; /* Stack buttons vertically */
+      width: 100%; /* Make buttons take up full width */
       margin-top: 10px;
     }
 
     .button {
-      width: auto; /* Allow buttons to adjust width based on content */
-      margin: 5px; /* Add some spacing between buttons */
+      width: 100%; /* Make buttons take up full width */
+      margin-bottom: 5px; /* Add spacing between buttons */
     }
 
     .photo-grid {
-      flex-wrap: wrap; /* Allow photos to wrap onto multiple lines */
-      justify-content: center;
+      flex-direction: column; /* Stack photos vertically */
     }
 
     .photo-grid img {
-      max-width: 48%; /* Each photo takes up almost half the screen width */
+      max-width: 100%; /* Make photos take up full width */
       margin-bottom: 10px; /* Add spacing between photos */
     }
 
@@ -327,9 +326,9 @@
     </div> -->
 
     <div class="buttons" id="navButtons">
-      <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-      <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-      <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+      <a href="/services" class="button">Our Services</a>
+      <a href="/about" class="button">About Us</a>
+      <a href="/contact" class="button">Contact Us</a>
       <button id="darkModeToggle" class="button">
         <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
       </button>
@@ -337,7 +336,7 @@
   </header>
 
   <section class="hero light-mode">
-    <h1>Express like you've never seen it.</h1>
+    <h1>What's behind express?</h1>
   </section>
 
   <div class="container">
