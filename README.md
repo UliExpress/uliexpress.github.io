@@ -1,3 +1,3 @@
 ## Hi there 👋
 
-# Currently working on the website. Should be connected hopefully in a few weeks.
+# Website is done. Just polishing up some things.
