@@ -35,7 +35,7 @@ body {
  background-color: #fff;
  color: #000;
  transition: background-color 0.3s ease, color 0.3s ease;
- overflow-x: hidden;
+ overflow-x: hidden; /* Remove horizontal scrolling */
 }
 
 /* Header Styles */
@@ -406,19 +406,19 @@ h1 {
  const textContainers = document.querySelectorAll('.text-container');
 
  darkModeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+ body.classList.toggle('dark-mode');
 
-  // Toggle hero background image based on dark mode
-  if (body.classList.contains('dark-mode')) {
-   heroSection.classList.add('dark-mode');
-  } else {
-   heroSection.classList.remove('dark-mode');
-  }
+ // Toggle hero background image based on dark mode
+ if (body.classList.contains('dark-mode')) {
+  heroSection.classList.add('dark-mode');
+ } else {
+  heroSection.classList.remove('dark-mode');
+ }
 
-  // Toggle the 'dark-mode' class on each .text-container
-  textContainers.forEach(container => {
-   container.classList.toggle('dark-mode');
-  });
+ // Toggle the 'dark-mode' class on each .text-container
+ textContainers.forEach(container => {
+  container.classList.toggle('dark-mode');
+ });
  });
 
  if (body.classList.contains('dark-mode')) {
