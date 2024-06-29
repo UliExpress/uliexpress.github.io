@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | UliExpress</title>
+  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
+  <style>
+
+  @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  }
+
+  @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  }
+
+        body {
+            font-family: 'Helvetica Neue';
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden; 
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 2em;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .box-animation {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            position: relative;
+            animation: rotateAnimation 5s linear infinite;
+            margin: 20px auto; 
+        }
+
+        .box-animation::before, 
+        .box-animation::after {
+            content: "";
+            position: absolute;
+            background-color: inherit;
+        }
+
+        .box-animation::before {
+            width: 120%;
+            height: 20%;
+            left: -10%;
+            top: 40%;
+            animation: waveAnimation 2s linear infinite; 
+        }
+
+        .box-animation::after {
+            width: 20%;
+            height: 120%;
+            left: 40%;
+            top: -10%;
+            animation: waveAnimation 2s linear infinite reverse; 
+        }
+
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes waveAnimation {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>This address is on a detour.<br>Let's get you back on track.</p>
+        <div class="box-animation"></div>
+        <p><a href="/">Return to sender</a> | <a href="/contact">Need help?</a></p>
+    </div>
+</body>
+</html>
