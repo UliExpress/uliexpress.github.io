@@ -87,7 +87,7 @@
 
   .photo-grid {
     display: flex;
-    flex-wrap: wrap; /* Allow photos to wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
@@ -130,7 +130,7 @@
   /* Footer Styles */
   footer {
     background-color: #f0f0f0;
-    padding: 20px; /* Added padding */
+    padding: 20px;
     text-align: left;
     box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -192,11 +192,11 @@
   }
 
   .hero.light-mode {
-    background-image: url("images/sacramentoday.avif"); /* Added url() */
+    background-image: url("images/sacramentoday.avif");
   }
 
   .hero.dark-mode {
-    background-image: url("images/sacramentonight.avif"); /* Added url() */
+    background-image: url("images/sacramentonight.avif");
   }
 
   /* Apply text stroke only in dark mode */
@@ -208,27 +208,27 @@
   @media (max-width: 768px) {
     .header {
       flex-direction: column;
-      align-items: center; /* Center logo and buttons vertically */
+      align-items: center;
     }
 
     .buttons {
-      flex-direction: column; /* Stack buttons vertically */
-      width: 100%; /* Make buttons take up full width */
+      flex-direction: column;
+      width: 100%;
       margin-top: 10px;
     }
 
     .button {
-      width: 100%; /* Make buttons take up full width */
-      margin-bottom: 5px; /* Add spacing between buttons */
+      width: 100%;
+      margin-bottom: 5px;
     }
 
     .photo-grid {
-      flex-direction: column; /* Stack photos vertically */
+      flex-direction: column;
     }
 
     .photo-grid img {
-      max-width: 100%; /* Make photos take up full width */
-      margin-bottom: 10px; /* Add spacing between photos */
+      max-width: 100%;
+      margin-bottom: 10px;
     }
 
     .footer-content {
@@ -244,48 +244,6 @@
       font-size: 2em;
     }
   }
-
-  /* Hamburger Menu Styles (Removed) */
-  /* .hamburger-menu {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  .hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #fff;
-    transition: 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;
-    }
-
-    .buttons {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    .buttons.show {
-      display: flex;
-    }
-
-    .button {
-      margin: 10px 0;
-    }
-  } */
 
   /* Dark Mode Icon */
   #darkModeToggle {
@@ -306,17 +264,13 @@
 
   /* Add space between pictures, contact button, and footer */
   .photo-grid {
-    margin-bottom: 40px; /* Add space between pictures and contact button */
+    margin-bottom: 40px;
   }
 
   .btn {
-    margin-bottom: 40px; /* Add space between contact button and footer */
+    margin-bottom: 40px;
   }
   </style>
-</head>
-<body>
-
-</style>
 </head>
 <body>
 <header class="header">

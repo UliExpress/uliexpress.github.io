@@ -8,95 +8,98 @@
 <style>
 
 @font-face {
-  font-family: 'Helvetica Neue';
-  src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-    url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+ font-family: 'Helvetica Neue';
+ src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+ font-weight: 900;
+ font-style: normal;
+ font-display: swap;
 }
 
 @font-face {
-  font-family: 'Helvetica Neue';
-  src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-    url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+ font-family: 'Helvetica Neue';
+ src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+ font-weight: 500;
+ font-style: normal;
+ font-display: swap;
 }
 
 /* Basic Styles */
 body {
-  margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #fff;
-  color: #000;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden; /* Remove horizontal scrolling */
+ margin: 0;
+ font-family: 'Helvetica Neue', sans-serif;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ background-color: #fff;
+ color: #000;
+ transition: background-color 0.3s ease, color 0.3s ease;
+ overflow-x: hidden; /* Remove horizontal scrolling */
 }
 
 /* Header Styles */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px 20px;
+ background-color: #000;
+ color: #fff;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  width: 100px;
-  cursor: pointer;
+ width: 100px;
+ cursor: pointer;
 }
 
 .buttons {
-  display: flex;
-  gap: 10px;
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap; /* Allow buttons to wrap */
+ justify-content: center; /* Center buttons if they wrap */
 }
 
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 10px 20px;
+ background-color: #fff;
+ color: #000;
+ border: 1px solid #000;
+ border-radius: 20px;
+ text-decoration: none;
+ transition: background-color 0.3s ease, color 0.3s ease;
+ white-space: nowrap; /* Prevent buttons from wrapping text */
 }
 
 .button:hover {
-  background-color: #000;
-  color: #fff;
+ background-color: #000;
+ color: #fff;
 }
 
 /* Content Styles */
 .container {
-  text-align: center;
-  padding: 20px;
-  flex-grow: 1;
+ text-align: center;
+ padding: 20px;
+ flex-grow: 1;
 }
 
 .photo-grid {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+ display: flex;
+ justify-content: center;
+ margin: 20px 0;
 }
 
 .photo-grid img {
-  width: 100%;
-  max-width: 900px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+ width: 100%;
+ max-width: 900px;
+ height: auto; /* Maintain aspect ratio */
+ border-radius: 10px;
 }
+
 
 /* Big Contact Us Button Styles */
 .btn {
@@ -172,15 +175,15 @@ body.dark-mode {
   color: #000;
 }
 
-/* Hero Section Styles (Modified for consistency) */
+/* Hero Section Styles */
 .hero {
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+ background-size: cover;
+ background-position: center;
+ min-height: 400px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
   /* Ensure the hero background is consistent in both modes */
   background-image: url("images/sanjoseday.avif"); /* Use day image by default */
 }
@@ -191,7 +194,7 @@ body.dark-mode {
 
 /* Apply text stroke only in dark mode */
 body.dark-mode .hero h1 {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 /* Media Query for Mobile Responsiveness */
@@ -296,38 +299,40 @@ body.dark-mode .hero h1 {
 
 /* Parallax Section Styles */
 section {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Make background fixed */
+ position: relative;
+ height: 100vh; /* Ensure each section takes full viewport height */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 
 /* Style the text container within each section */
 .text-container {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+ background-color: rgba(255, 255, 255, 0.8);
+ padding: 20px;
+ border-radius: 10px;
+ text-align: center;
 }
 
-.text-container.dark-mode { /* Style for dark mode */
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  color: white; /* White text in dark mode */
+.text-container.dark-mode {
+ background-color: rgba(0, 0, 0, 0.8);
+ color: white;
 }
-
 
 h1 {
-  color: white;
-  text-shadow: 1px 1px 3px black;
-  z-index: 1;
-  font-size: 3em;
-  font-weight: 400;
+ color: white;
+ text-shadow: 1px 1px 3px black;
+ z-index: 1;
+ font-size: 3em;
+ font-weight: 400;
 }
+</style>
+</head>
+<body>
 </style>
 </head>
 <body>
