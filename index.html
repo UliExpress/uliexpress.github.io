@@ -8,267 +8,268 @@
   <style>
 
   @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-    url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Helvetica Neue';
+  src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
   }
 
   @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-    url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Helvetica Neue';
+  src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+  url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
   }
 
   /* Basic Styles */
   body {
-    margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #fff;
-    color: #000;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Remove overflow-x: hidden; */
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Remove overflow-x: hidden; */
   }
 
   /* Header Styles */
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
   .logo {
-    width: 100px;
-    cursor: pointer;
+  width: 100px;
+  cursor: pointer;
   }
 
   .buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
   }
 
   .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .button:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
   }
 
   /* Content Styles */
   .container {
-    text-align: center;
-    padding: 20px;
-    flex-grow: 1;
+  text-align: center;
+  padding: 20px;
+  flex-grow: 1;
   }
 
   .photo-grid {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
   }
 
   .photo-grid img {
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
   }
 
   /* Big Contact Us Button Styles */
   .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: white;
-    background-color: blue;
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
   }
 
   .btn:hover {
-    background-color: darkblue;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  background-color: darkblue;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   }
 
   /* Footer Styles */
   footer {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: left;
-    box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-    width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
   }
 
   .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 960px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
   }
 
   .logo img {
-    height: 30px;
+  height: 30px;
   }
 
   .contact-info {
-    font-size: 14px;
-    margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
   }
 
   .copyright {
-    font-size: 12px;
+  font-size: 12px;
   }
 
   /* Dark Mode Styles */
   body.dark-mode {
-    background-color: #121212;
-    color: #fff;
+  background-color: #121212;
+  color: #fff;
   }
 
   .dark-mode .header,
   .dark-mode .button,
   .dark-mode footer {
-    background-color: #1f1f1f;
-    color: #fff;
+  background-color: #1f1f1f;
+  color: #fff;
   }
 
   .dark-mode .button {
-    border-color: #fff;
+  border-color: #fff;
   }
 
   .dark-mode .button:hover {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
   }
+
 
   /* Hero Section Styles */
   .hero {
-    background-size: cover;
-    background-position: center;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   }
 
   .hero.light-mode {
-    background-image: url("images/sfday.avif");
+  background-image: url("images/sfday.avif");
   }
 
   .hero.dark-mode {
-    background-image: url("images/sfnight.avif");
+  background-image: url("images/sfnight.avif");
   }
 
   /* Apply text stroke only in dark mode */
   body.dark-mode .hero h1 {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   /* Media Query for Mobile Responsiveness */
   @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: center; /* Center logo and buttons vertically */
-    }
+  .header {
+  flex-direction: column;
+  align-items: center; /* Center logo and buttons vertically */
+  }
 
-    .buttons {
-      flex-direction: row; /* Keep buttons in a row */
-      flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
-      justify-content: center; /* Center buttons horizontally */
-      margin-top: 10px;
-    }
+  .buttons {
+  flex-direction: row; /* Keep buttons in a row */
+  flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 10px;
+  }
 
-    .button {
-      width: auto; /* Allow buttons to adjust width based on content */
-      margin: 5px; /* Add some spacing between buttons */
-    }
+  .button {
+  width: auto; /* Allow buttons to adjust width based on content */
+  margin: 5px; /* Add some spacing between buttons */
+  }
 
-    .photo-grid {
-      justify-content: center;
-    }
+  .photo-grid {
+  justify-content: center;
+  }
 
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
+  .footer-content {
+  flex-direction: column;
+  text-align: center;
+  }
 
-    .contact-info {
-      margin-bottom: 20px;
-    }
+  .contact-info {
+  margin-bottom: 20px;
+  }
 
-    .hero h1 {
-      font-size: 2em;
-    }
+  .hero h1 {
+  font-size: 2em;
+  }
   }
 
   /* Dark Mode Icon */
   #darkModeToggle {
-    background: none; /* Remove button background */
-    border: none; /* Remove button border */
-    padding: 10px; /* Adjust padding as needed */
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  padding: 10px; /* Adjust padding as needed */
   }
 
   #darkModeToggle img {
-    width: 24px; /* Adjust icon size as needed */
-    height: 24px;
+  width: 24px; /* Adjust icon size as needed */
+  height: 24px;
   }
 
   /* Location List Styles */
   .location-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px; /* Add some spacing below the list */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px; /* Add some spacing below the list */
   }
 
   .location-list span {
-    font-size: 14px;
-    color: #666; /* Slightly lighter color for the locations */
+  font-size: 14px;
+  color: #666; /* Slightly lighter color for the locations */
   }
 
   /* Media Query for Mobile Responsiveness */
   @media (max-width: 768px) {
-    .location-list {
-      flex-direction: column; /* Stack locations vertically on mobile */
-      align-items: flex-start; /* Align items to the left */
-    }
+  .location-list {
+  flex-direction: column; /* Stack locations vertically on mobile */
+  align-items: flex-start; /* Align items to the left */
+  }
 
-    .location-list span {
-      margin-bottom: 5px; /* Add spacing between locations */
-    }
+  .location-list span {
+  margin-bottom: 5px; /* Add spacing between locations */
+  }
   }
   </style>
 </head>
@@ -278,12 +279,12 @@
   <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
 
   <div class="buttons" id="navButtons">
-    <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
-    <a href="https://uliexpress.co/about.html" class="button">About Us</a>
-    <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
-    <button id="darkModeToggle" class="button">
-      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-    </button>
+  <a href="https://uliexpress.co/services.html" class="button">Our Services</a>
+  <a href="https://uliexpress.co/about.html" class="button">About Us</a>
+  <a href="https://uliexpress.co/contact.html" class="button">Contact Us</a>
+  <button id="darkModeToggle" class="button">
+  <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+  </button>
   </div>
 </header>
 
@@ -293,21 +294,21 @@
 
 <div class="container">
   <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
-    What's longer than 165 inches, has a large size-to-weight ratio, or weighs
-    more than 150 pounds? According to many parcel carriers, it is an oversized
-    item. Each carrier has specific metrics for what they consider "big and bulky,"
-    "oversized," or "substandard," which can be bad news for merchants and their
-    customers. That's because oversized items often cost more to ship, take
-    longer to arrive, and come with all kinds of extra fees, penalties, and
-    hassles—and that doesn't even make me want to return large items via normal
-    shipping channels. Oversupply can be a mystery. If you can't see this
-    information, it's hard to promise customers timely receipt and a fair
-    price. Often, retailers don't offer to ship oversized items at all,
-    which means customer frustration and lost sales. Here are some insights
-    into why oversize shipping is different and how you can overcome these
-    challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
-    something else, it's possible to skip oversized shipping and move those
-    big items.
+  What's longer than 165 inches, has a large size-to-weight ratio, or weighs
+  more than 150 pounds? According to many parcel carriers, it is an oversized
+  item. Each carrier has specific metrics for what they consider "big and bulky,"
+  "oversized," or "substandard," which can be bad news for merchants and their
+  customers. That's because oversized items often cost more to ship, take
+  longer to arrive, and come with all kinds of extra fees, penalties, and
+  hassles—and that doesn't even make me want to return large items via normal
+  shipping channels. Oversupply can be a mystery. If you can't see this
+  information, it's hard to promise customers timely receipt and a fair
+  price. Often, retailers don't offer to ship oversized items at all,
+  which means customer frustration and lost sales. Here are some insights
+  into why oversize shipping is different and how you can overcome these
+  challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
+  something else, it's possible to skip oversized shipping and move those
+  big items.
   </p>
 
   <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
@@ -324,31 +325,68 @@
 
 <footer>
   <div class="footer-content">
-    <div class="logo">
-      <img src="images/uliexpress.png" alt="UliExpressLogo">
-    </div>
-    <div class="contact-info">
-      <p>Uli Express, Inc.</p>
-      <p>Email: support@uliexpress.co</p>
-      <p>Phone: +1 (628) 282-0552</p>
-    </div>
-    <div class="copyright">
-      &copy; 2024 Uli Express, Inc.
-    </div>
+  <div class="logo">
+  <img src="images/uliexpress.png" alt="UliExpressLogo">
+  </div>
+  <div class="contact-info">
+  <p>Uli Express, Inc.</p>
+  <p>Email: support@uliexpress.co</p>
+  <p>Phone: +1 (628) 282-0552</p>
+  </div>
+  <div class="copyright">
+  &copy; 2024 Uli Express, Inc.
+  </div>
   </div>
 </footer>
 <script>
+  // Get the necessary elements
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const heroSection = document.querySelector('.hero');
 
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const heroSection = document.querySelector('.hero');
+  // Function to set the theme
+  function setTheme(theme) {
+  if (theme === 'dark') {
+  body.classList.add('dark-mode');
+  heroSection.classList.add('dark-mode');
+  } else {
+  body.classList.remove('dark-mode');
+  heroSection.classList.remove('dark-mode');
+  }
+  }
 
-darkModeToggle.addEventListener('click', () => {
+  // Function to set the initial theme based on system and user preferences
+  function setInitialTheme() {
+  // 1. Check for user preference
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+  setTheme(storedTheme);
+  return; // Exit early if user preference is found
+  }
+
+  // 2. Check for system preference if no user preference
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  setTheme('dark');
+  } else {
+  setTheme('light'); // Default to light if no system preference
+  }
+  }
+
+  // Call the function to set the initial theme when the page loads
+  setInitialTheme();
+
+  // Toggle dark mode on button click and store the preference
+  darkModeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
   heroSection.classList.toggle('dark-mode');
-});
 
+  // Store the user's preference
+  if (body.classList.contains('dark-mode')) {
+  localStorage.setItem('theme', 'dark');
+  } else {
+  localStorage.setItem('theme', 'light');
+  }
+  });
 </script>
-
 </body>
 </html>

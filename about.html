@@ -316,68 +316,84 @@
 </head>
 <body>
 
-  <header class="header">
-    <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+</style>
+</head>
+<body>
+<header class="header">
+  <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+  <div class="buttons" id="navButtons">
+    <a href="/services" class="button">Our Services</a>
+    <a href="/about" class="button">About Us</a>
+    <a href="/contact" class="button">Contact Us</a>
+    <button id="darkModeToggle" class="button">
+      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
+    </button>
+  </div>
+</header>
 
-    <!-- Hamburger Menu (Removed) -->
-    <!-- <div class="hamburger-menu" id="hamburgerMenu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div> -->
+<section class="hero light-mode">
+  <h1>What's behind express?</h1>
+</section>
 
-    <div class="buttons" id="navButtons">
-      <a href="/services" class="button">Our Services</a>
-      <a href="/about" class="button">About Us</a>
-      <a href="/contact" class="button">Contact Us</a>
-      <button id="darkModeToggle" class="button">
-        <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-      </button>
-    </div>
-  </header>
+<div class="container">
+  <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
+    At UliExpress, we understand the importance of timely and efficient delivery. That's why we offer a range of flexible delivery solutions tailored to meet your specific needs. Whether you require same-day delivery, scheduled deliveries, or on-demand services, our team of experienced drivers is here to assist you.
+  </p>
 
-  <section class="hero light-mode">
-    <h1>What's behind express?</h1>
-  </section>
-
-  <div class="container">
-    <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
-      At UliExpress, we understand the importance of timely and efficient delivery. That's why we offer a range of flexible delivery solutions tailored to meet your specific needs. Whether you require same-day delivery, scheduled deliveries, or on-demand services, our team of experienced drivers is here to assist you.
-    </p>
-
-    <div class="photo-grid">
-      <img src="images/showcase6.jpg" alt="Photo 1">
-      <img src="images/showcase7.jpg" alt="Photo 2">
-      <img src="images/showcase8.jpg" alt="Photo 3">
-    </div>
-
-    <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+  <div class="photo-grid">
+    <img src="images/showcase6.jpg" alt="Photo 1">
+    <img src="images/showcase7.jpg" alt="Photo 2">
+    <img src="images/showcase8.jpg" alt="Photo 3">
   </div>
 
-  <footer>
-    <div class="footer-content">
-      <div class="logo">
-        <img src="images/uliexpress.png" alt="UliExpressLogo">
-      </div>
-      <div class="contact-info">
-        <p>Uli Express, Inc.</p>
-        <p>Email: support@uliexpress.co</p>
-        <p>Phone: +1 (628) 282-0552</p>
-      </div>
-      <div class="copyright">
-        &copy; 2024 Uli Express, Inc.
-      </div>
-    </div>
-  </footer>
-  <script>
+  <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+</div>
 
+<footer>
+  <div class="footer-content">
+    <div class="logo">
+      <img src="images/uliexpress.png" alt="UliExpressLogo">
+    </div>
+    <div class="contact-info">
+      <p>Uli Express, Inc.</p>
+      <p>Email: support@uliexpress.co</p>
+      <p>Phone: +1 (628) 282-0552</p>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Uli Express, Inc.
+    </div>
+  </div>
+</footer>
+
+<script>
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
   const heroSection = document.querySelector('.hero');
 
+  // Function to check system theme preference
+  function checkSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.classList.add('dark-mode');
+      heroSection.classList.remove('light-mode');
+      heroSection.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+      heroSection.classList.remove('dark-mode');
+      heroSection.classList.add('light-mode');
+    }
+  }
+
+  // Check on page load
+  checkSystemTheme();
+
+  // Update theme if user changes system settings
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkSystemTheme);
+
+  // Toggle dark mode on button click
   darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 
+    // Update hero section background
     if (body.classList.contains('dark-mode')) {
       heroSection.classList.remove('light-mode');
       heroSection.classList.add('dark-mode');
@@ -385,16 +401,7 @@
       heroSection.classList.remove('dark-mode');
       heroSection.classList.add('light-mode');
     }
-    // Hamburger Menu Functionality (Removed)
-    /* const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const navButtons = document.getElementById('navButtons');
-
-    hamburgerMenu.addEventListener('click', () => {
-      navButtons.classList.toggle('show');
-    }); */
-
   });
-  </script>
-
+</script>
 </body>
 </html>

@@ -145,25 +145,26 @@
 
  /* Dark Mode Styles */
  body.dark-mode {
-  background-color: #121212;
-  color: #fff;
+   background-color: #121212;
+   color: #fff;
  }
 
  .dark-mode .header,
  .dark-mode .button,
  .dark-mode footer {
-  background-color: #1f1f1f;
-  color: #fff;
+   background-color: #1f1f1f;
+   color: #fff;
  }
 
  .dark-mode .button {
-  border-color: #fff;
+   border-color: #fff;
  }
 
  .dark-mode .button:hover {
-  background-color: #fff;
-  color: #000;
+   background-color: #fff;
+   color: #000;
  }
+
 
  /* Hero Section Styles */
  .hero {
@@ -185,12 +186,12 @@
  }
 
  /* Apply text stroke only in dark mode */
- body.dark-mode .hero h1 {
+body.dark-mode .hero h1 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
- }
+}
 
- /* Media Query for Mobile Responsiveness */
- @media (max-width: 768px) {
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
   .header {
    flex-direction: column;
    align-items: center; /* Center logo and buttons vertically */
@@ -232,30 +233,31 @@
 
  /* Dark Mode Icon */
  #darkModeToggle {
-  background: none; /* Remove button background */
-  border: none;  /* Remove button border */
-  padding: 10px;  /* Adjust padding as needed */
+   background: none; /* Remove button background */
+   border: none;  /* Remove button border */
+   padding: 10px;  /* Adjust padding as needed */
  }
 
  #darkModeToggle img {
-  width: 24px; /* Adjust icon size as needed */
-  height: 24px;
+   width: 24px; /* Adjust icon size as needed */
+   height: 24px;
  }
 
+
  /* Contact Us Page Styles */
- .contact-us-title {
+.contact-us-title {
   font-size: 2.5em;
   font-weight: 900;
   margin-bottom: 20px;
- }
+}
 
- .contact-info-text {
+.contact-info-text {
   font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 20px;
- }
+}
 
- .contact-link {
+.contact-link {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.2em;
@@ -268,21 +270,21 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   position: relative;
   overflow: hidden;
- }
+}
 
- .contact-link:hover {
+.contact-link:hover {
   background-color: #0056b3;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
- }
+}
 
- .contact-link:active {
+.contact-link:active {
   transform: translateY(2px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
- }
+}
 
- .contact-link:focus {
+.contact-link:focus {
   outline: none;
- }
+}
  </style>
 </head>
 <body>
@@ -326,32 +328,35 @@
 </div>
 
 <footer>
- <div class="footer-content">
-  <div class="logo">
-   <img src="images/uliexpress.png" alt="UliExpressLogo">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="images/uliexpress.png" alt="UliExpressLogo">
+    </div>
+    <div class="contact-info">
+      <p>Uli Express, Inc.</p>
+      <p>Email: support@uliexpress.co</p>
+      <p>Phone: +1 (628) 282-0552</p>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Uli Express, Inc.
+    </div>
   </div>
-  <div class="contact-info">
-   <p>Uli Express, Inc.</p>
-   <p>Email: support@uliexpress.co</p>
-   <p>Phone: +1 (628) 282-0552</p>
-  </div>
-  <div class="copyright">
-   &copy; 2024 Uli Express, Inc.
-  </div>
- </div>
 </footer>
 <script>
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const heroSection = document.querySelector('.hero');
 
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const heroSection = document.querySelector('.hero');
+  // Check the system's preferred color scheme
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    body.classList.add('dark-mode');
+    heroSection.classList.add('dark-mode'); // Apply dark mode to the hero section
+  }
 
-darkModeToggle.addEventListener('click', () => {
- body.classList.toggle('dark-mode');
- heroSection.classList.toggle('dark-mode'); // Toggle only the 'dark-mode' class on the hero section
-});
-
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    heroSection.classList.toggle('dark-mode'); // Toggle only the 'dark-mode' class on the hero section
+  });
 </script>
-
 </body>
 </html>
