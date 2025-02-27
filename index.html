@@ -22,6 +22,10 @@
       <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
     </button>
   </div>
+
+  <div class="hamburger-menu">
+    <img src="images/icons/hamburger-menu.png" alt="Menu" class="hamburger-icon">
+  </div>
 </header>
 
 <section class="hero light-mode">
@@ -122,6 +126,14 @@
     } else {
       localStorage.setItem('theme', 'light');
     }
+  });
+
+  // Hamburger menu toggle
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navButtons = document.getElementById('navButtons');
+
+  hamburgerMenu.addEventListener('click', () => {
+    navButtons.classList.toggle('show');
   });
 </script>
 
