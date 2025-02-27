@@ -33,7 +33,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px; /* Add space between error message and button */
+      margin-bottom: 20px;
     }
 
     .password-input {
@@ -45,20 +45,29 @@
       text-align: center;
       background-color: #242424;
       color: #ffffff;
-      animation: none; /* Reset animation */
+      animation: none;
     }
 
-    button {
+    .circle-button {
       background-color: #007bff;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 20px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    button:hover {
+    .circle-button img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .circle-button:hover {
       background-color: #0056b3;
     }
 
@@ -88,25 +97,27 @@
     <input type="password" placeholder="Enter password" class="password-input" id="passwordInput">
     <span class="error-message" id="errorMessage"></span>
   </div>
-  <button onclick="checkPassword()">Enter</button>
+  <button onclick="checkPassword()" class="circle-button">
+    <img src="images/arrow-right.png" alt="Arrow Right">
+  </button>
 
   <script>
-     function checkPassword() {
-       var password = document.getElementById("passwordInput").value;
-       var encodedPassword = "YW50"; // "ant" encoded in Base64
-       var decodedPassword = atob(encodedPassword); // Decode the password
-       var errorMessage = document.getElementById("errorMessage");
-       document.getElementById("passwordInput").classList.remove("shake");
+    function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      var encodedPassword = "YW50";
+      var decodedPassword = atob(encodedPassword);
+      var errorMessage = document.getElementById("errorMessage");
+      document.getElementById("passwordInput").classList.remove("shake");
 
-       if (password === decodedPassword) {
-         window.location.href = "home.html";
-       } else {
-         errorMessage.textContent = "Incorrect password. Please try again.";
-         errorMessage.style.display = "block";
-         document.getElementById("passwordInput").classList.add("shake");
-       }
-     }
-   </script>
+      if (password === decodedPassword) {
+        window.location.href = "home.html";
+      } else {
+        errorMessage.textContent = "Incorrect password. Please try again.";
+        errorMessage.style.display = "block";
+        document.getElementById("passwordInput").classList.add("shake");
+      }
+    }
+  </script>
 
 </body>
 </html>
