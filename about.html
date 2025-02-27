@@ -3,288 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about UliExpress and our mission to provide fast and reliable delivery services in the Bay Area">
+  <meta name="keywords" content="UliExpress, about us, delivery services, Bay Area, mission, values">
   <title>About Us | UliExpress</title>
   <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <style>
-
-    @font-face {
-      font-family: 'Helvetica Neue';
-      src: url('css/fonts/HelveticaNeue-Heavy.woff2') format('woff2'),
-      url('css/fonts/HelveticaNeue-Heavy.woff') format('woff');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Helvetica Neue';
-      src: url('css/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-      url('css/fonts/HelveticaNeue-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Basic Styles */
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: #fff;
-      color: #000;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      /* Remove horizontal scrolling */
-      overflow-x: hidden;
-    }
-
-    /* Header Styles */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #000;
-      color: #fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .logo {
-      width: 100px;
-      cursor: pointer;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #000;
-      color: #fff;
-    }
-
-    /* Content Styles */
-    .container {
-      text-align: center;
-      padding: 20px;
-      flex-grow: 1;
-    }
-
-    .photo-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .photo-grid img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .photo-grid img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Big Contact Us Button Styles */
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: blue;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn:hover {
-      background-color: darkblue;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-
-    /* Footer Styles */
-    footer {
-      background-color: #f0f0f0;
-      padding: 20px;
-      text-align: left;
-      box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
-      width: 100%;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .logo img {
-      height: 30px;
-    }
-
-    .contact-info {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .copyright {
-      font-size: 12px;
-    }
-
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #fff;
-    }
-
-    .dark-mode .header,
-    .dark-mode .button,
-    .dark-mode footer {
-      background-color: #1f1f1f;
-      color: #fff;
-    }
-
-    .dark-mode .button {
-      border-color: #fff;
-    }
-
-    .dark-mode .button:hover {
-      background-color: #fff;
-      color: #000;
-    }
-
-    /* Hero Section Styles */
-    .hero {
-      background-size: cover;
-      background-position: center;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero.light-mode {
-      background-image: url("images/sacramentoday.avif");
-    }
-
-    .hero.dark-mode {
-      background-image: url("images/sacramentonight.avif");
-    }
-
-    /* Apply text stroke only in dark mode */
-    body.dark-mode .hero h1 {
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
-
-    /* Media Query for Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .buttons {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .button {
-        width: 100%;
-        margin-bottom: 5px;
-      }
-
-      .photo-grid {
-        flex-direction: column;
-      }
-
-      .photo-grid img {
-        max-width: 100%;
-        margin-bottom: 10px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-info {
-        margin-bottom: 20px;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-    }
-
-    /* Dark Mode Icon */
-    #darkModeToggle {
-      background: none;
-      border: none;
-      padding: 10px;
-    }
-
-    #darkModeToggle img {
-      width: 24px;
-      height: 24px;
-    }
-
-    /* Center align paragraph text */
-    .container p {
-      text-align: center;
-    }
-
-    /* Add space between pictures, contact button, and footer */
-    .photo-grid {
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      margin-bottom: 40px;
-    }
-
-    /* Instagram Feed Container */
-    #snapwidget {
-      max-width: 640px; /* Adjust as needed */
-      margin: 20px auto;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="header">
   <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
   <div class="buttons" id="navButtons">
-    <a href="/services" class="button">Our Services</a>
-    <a href="/about" class="button">About Us</a>
-    <a href="/contact" class="button">Contact Us</a>
+    <a href="services.html" class="button">Our Services</a>
+    <a href="about.html" class="button">About Us</a>
+    <a href="contact.html" class="button">Contact Us</a>
     <button id="darkModeToggle" class="button">
       <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
     </button>
@@ -301,14 +32,13 @@
   </p>
 
   <div class="photo-grid">
-    <img src="images/showcase6.jpg" alt="Photo 1">
-    <img src="images/showcase7.jpg" alt="Photo 2">
-    <img src="images/showcase8.jpg" alt="Photo 3">
+    <img src="images/showcase6.jpg" alt="Delivery">
+    <img src="images/showcase7.jpg" alt="Delivery">
+    <img src="images/showcase8.jpg" alt="Delivery">
   </div>
 
-  <a href="https://uliexpress.co/contact" class="btn">Contact us</a>
+  <a href="contact.html" class="btn">Contact us</a>
 
-  <!-- Instagram Feed -->
   <div id="snapwidget"></div>
   <script src="https://snapwidget.com/js/snapwidget.js"></script>
   <script>
