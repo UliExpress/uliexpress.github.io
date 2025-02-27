@@ -3,140 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local Bay Area drivers servicing your schedule or on-demand delivery needs">
-  <meta name="keywords" content="delivery, same day delivery, scheduled delivery, Bay Area, local delivery">
-  <title>Home | UliExpress</title>
+  <title>UliExpress</title>
   <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"> <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .password-input {
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+  <img src="images/uliexpress.png" alt="UliExpress Logo" class="logo">
+  <input type="password" placeholder="Enter password" class="password-input" id="passwordInput">
+  <button onclick="checkPassword()">Enter</button>
 
-  <div class="buttons" id="navButtons">
-    <a href="services.html" class="button">Our Services</a>
-    <a href="about.html" class="button">About Us</a>
-    <a href="contact.html" class="button">Contact Us</a>
-    <button id="darkModeToggle" class="button">
-      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-    </button>
-  </div>
-
-  <header class="header">
-      <div class="hamburger-menu">
-          <img src="images/icons/hamburger-menu.svg" alt="Menu" class="hamburger-icon">
-      </div>
-  </header>
-
-<section class="hero light-mode">
-  <h1>Local Bay Area drivers servicing your schedule or on-demand delivery needs</h1>
-</section>
-
-<div class="container">
-  <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
-    What's longer than 165 inches, has a large size-to-weight ratio, or weighs
-    more than 150 pounds? According to many parcel carriers, it is an oversized
-    item. Each carrier has specific metrics for what they consider "big and bulky,"
-    "oversized," or "substandard," which can be bad news for merchants and their
-    customers. That's because oversized items often cost more to ship, take
-    longer to arrive, and come with all kinds of extra fees, penalties, and
-    hassles—and that doesn't even make me want to return large items via normal
-    shipping channels. Oversupply can be a mystery. If you can't see this
-    information, it's hard to promise customers timely receipt and a fair
-    price. Often, retailers don't offer to ship oversized items at all,
-    which means customer frustration and lost sales. Here are some insights
-    into why oversize shipping is different and how you can overcome these
-    challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
-    something else, it's possible to skip oversized shipping and move those
-    big items.
-  </p>
-
-  <a href="contact.html" class="btn">Contact us</a>
-</div>
-
-<div class="location-list">
-  <span>Available in:</span>
-  <span>San Francisco</span>
-  <span>San Jose</span>
-  <span>Oakland</span>
-  <span>Sacramento</span>
-</div>
-
-<footer>
-  <div class="footer-content">
-    <div class="logo">
-      <img src="images/uliexpress.png" alt="UliExpressLogo">
-    </div>
-    <div class="contact-info">
-      <p>Uli Express, Inc.</p>
-      <p>Email: support@uliexpress.co</p>
-      <p>Phone: +1 (628) 282-0552</p>
-    </div>
-    <div class="copyright">
-      &copy; 2024 Uli Express, Inc.
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Get the necessary elements
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  const heroSection = document.querySelector('.hero');
-
-  // Function to set the theme
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      body.classList.add('dark-mode');
-      heroSection.classList.add('dark-mode');
-    } else {
-      body.classList.remove('dark-mode');
-      heroSection.classList.remove('dark-mode');
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      if (password === "ant") {
+        window.location.href = "home.html";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
     }
-  }
-
-  // Function to set the initial theme based on system and user preferences
-  function setInitialTheme() {
-    // 1. Check for user preference
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-      return; // Exit early if user preference is found
-    }
-
-    // 2. Check for system preference if no user preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    } else {
-      setTheme('light'); // Default to light if no system preference
-    }
-  }
-
-  // Call the function to set the initial theme when the page loads
-  setInitialTheme();
-
-  // Toggle dark mode on button click and store the preference
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    heroSection.classList.toggle('dark-mode');
-
-    // Store the user's preference
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // Hamburger menu toggle
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const navButtons = document.getElementById('navButtons');
-
-  hamburgerMenu.addEventListener('click', () => {
-    navButtons.classList.toggle('show');
-  });
-</script>
+  </script>
 
 </body>
 </html>
