@@ -6,29 +6,51 @@
   <title>UliExpress</title>
   <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
   <link rel="stylesheet" href="css/style.css"> <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: #f4f4f4;
-    }
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text color */
+  }
 
-    .logo {
-      width: 200px;
-      margin-bottom: 20px;
-    }
+  .logo {
+    width: 200px;
+    margin-bottom: 20px;
+  }
 
-    .password-input {
-      border: none;
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 20px;
-      width: 200px;
-      text-align: center;
-    }
+  .password-input {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px; /* Reduced margin */
+    width: 200px;
+    text-align: center;
+    background-color: #242424; /* Dark input field */
+    color: #ffffff; /* White text in input */
+  }
+
+  button {
+    background-color: #007bff; /* Blue button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  .error-message {
+    color: red;
+    display: none; /* Initially hidden */
+  }
   </style>
 </head>
 <body>
