@@ -91,19 +91,22 @@
   <button onclick="checkPassword()">Enter</button>
 
   <script>
-    function checkPassword() {
-      var password = document.getElementById("passwordInput").value;
-      var errorMessage = document.getElementById("errorMessage");
-      if (password === "ant") {
-        window.location.href = "home.html";
-      } else {
-        errorMessage.textContent = "Incorrect password. Please try again.";
-        errorMessage.style.display = "block";
-        document.getElementById("passwordInput").classList.remove("shake"); // Remove shake class
-        document.getElementById("passwordInput").classList.add("shake"); // Add shake class
-      }
-    }
-  </script>
+     function checkPassword() {
+       var password = document.getElementById("passwordInput").value;
+       var encodedPassword = "YW50"; // "ant" encoded in Base64
+       var decodedPassword = atob(encodedPassword); // Decode the password
+       var errorMessage = document.getElementById("errorMessage");
+       document.getElementById("passwordInput").classList.remove("shake");
+
+       if (password === decodedPassword) {
+         window.location.href = "home.html";
+       } else {
+         errorMessage.textContent = "Incorrect password. Please try again.";
+         errorMessage.style.display = "block";
+         document.getElementById("passwordInput").classList.add("shake");
+       }
+     }
+   </script>
 
 </body>
 </html>
