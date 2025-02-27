@@ -38,7 +38,7 @@ body {
     background-color: #000;
     color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -49,7 +49,7 @@ body {
 .buttons {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .button {
@@ -185,11 +185,11 @@ body.dark-mode {
 }
 
 .hero.light-mode {
-    background-image: url("../images/sfday.avif"); /* Updated path */
+    background-image: url("../images/sfday.avif");
 }
 
 .hero.dark-mode {
-    background-image: url("../images/sfnight.avif"); /* Updated path */
+    background-image: url("../images/sfnight.avif");
 }
 
 /* Apply text stroke only in dark mode */
@@ -227,28 +227,28 @@ body.dark-mode .hero h1 {
 /* Media Query for Mobile Responsiveness */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; /* Stack header elements vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     .buttons {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: column;
         align-items: center;
         margin-top: 10px;
-        display: none; /* Hide navigation buttons by default */
+        display: none;
     }
 
     .button {
-        width: 100%; /* Make buttons full width */
+        width: 100%;
         margin-bottom: 5px;
     }
 
     /* Hamburger Menu Styles */
     .hamburger-menu {
-        display: block; /* Show hamburger menu on mobile */
+        display: block;
         cursor: pointer;
-        position: relative; /* Add position relative for positioning the icon */
-        z-index: 2; /* Ensure the icon is on top */
+        position: relative;
+        z-index: 2;
     }
 
     .hamburger-icon {
@@ -257,7 +257,7 @@ body.dark-mode .hero h1 {
     }
 
     .buttons.show {
-        display: flex; /* Show the buttons when the hamburger menu is toggled */
+        display: flex;
         flex-direction: column;
         width: 100%;
         background-color: #1f1f1f;
@@ -265,7 +265,7 @@ body.dark-mode .hero h1 {
         top: 100%;
         left: 0;
         padding: 10px;
-        z-index: 2; /* Ensure the menu is on top */
+        z-index: 2;
     }
 
     .buttons .button:last-child {
@@ -278,7 +278,7 @@ body.dark-mode .hero h1 {
     }
 
     .photo-grid {
-        flex-direction: column; /* Stack photos vertically */
+        flex-direction: column;
     }
 
     .photo-grid img {
@@ -287,7 +287,7 @@ body.dark-mode .hero h1 {
     }
 
     .footer-content {
-        flex-direction: column; /* Stack footer content vertically */
+        flex-direction: column;
         text-align: center;
     }
 
@@ -296,17 +296,36 @@ body.dark-mode .hero h1 {
     }
 
     .hero h1 {
-        font-size: 2em; /* Reduce hero title font size */
+        font-size: 2em;
     }
 
     .location-list {
-        flex-direction: column; /* Stack locations vertically */
+        flex-direction: column;
         align-items: flex-start;
     }
 
     .location-list span {
         margin-bottom: 5px;
     }
+
+    /* Remove blank space on sides */
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Adjust button spacing on PC */
+.buttons {
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
 }
 
 /* 404 Page Styles */
