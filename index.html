@@ -54,21 +54,33 @@
   </style>
 </head>
 <body>
-
   <img src="images/uliexpress.png" alt="UliExpress Logo" class="logo">
-  <input type="password" placeholder="Enter password" class="password-input" id="passwordInput">
-  <button onclick="checkPassword()">Enter</button>
+  <style>
+  .work-in-progress {
+  color: #ffffff; /* White text color */
+  text-align: center;
+  margin-bottom: 20px;
+}
+</style>
+ <p class="work-in-progress">Work in progress. If you're the owner of this site, please enter the password now.</p>
+ <div>
+   <input type="password" placeholder="Enter password" class="password-input" id="passwordInput">
+   <span class="error-message" id="errorMessage"></span>
+ </div>
+ <button onclick="checkPassword()">Enter</button>
 
-  <script>
-    function checkPassword() {
-      var password = document.getElementById("passwordInput").value;
-      if (password === "ant") {
-        window.location.href = "home.html";
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
-    }
-  </script>
+ <script>
+   function checkPassword() {
+     var password = document.getElementById("passwordInput").value;
+     var errorMessage = document.getElementById("errorMessage");
+     if (password === "ant") {
+       window.location.href = "home.html";
+     } else {
+       errorMessage.textContent = "Incorrect password. Please try again.";
+       errorMessage.style.display = "block";
+     }
+   }
+ </script>
 
 </body>
 </html>
