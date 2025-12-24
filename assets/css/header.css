@@ -7,7 +7,7 @@
 .header-inner {
   width: min(var(--container), calc(100% - 32px));
   margin: 0 auto;
-  padding: 12px 14px;
+  padding: 8px 14px;
 
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.02);
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
 }
 
 .brand {
@@ -31,7 +31,7 @@
 }
 
 .brand img {
-  width: 120px;
+  width: 108px;
   height: auto;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .nav a {
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 999px;
   color: rgba(245,245,245,0.9);
 }
@@ -61,8 +61,8 @@
 
 /* Hamburger styling (no header background changes) */
 .menu-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.14);
   background: rgba(255,255,255,0.06);
