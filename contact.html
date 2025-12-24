@@ -1,99 +1,87 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact UliExpress for all your delivery needs in the Bay Area. Get in touch via phone or email">
-  <meta name="keywords" content="UliExpress, contact us, delivery services, Bay Area, phone, email">
-  <title>Contact Us | UliExpress</title>
-  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact us to start a project." />
+  <meta name="theme-color" content="#C20000" />
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <title>Uli Express, Inc | Contact Us</title>
+
+  <link rel="stylesheet" href="assets/css/branding.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-inner" style="
+    width: 970px;
+    height: 90px;
+">
+      <a class="brand" href="index.html" aria-label="Go Home">
+        <img src="assets/img/UliExpressLogo.svg" alt="Uli Express logo">
+      </a>
 
-<header class="header">
-  <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+      <!-- Mobile hamburger (ONLY on mobile via CSS) -->
+      <a href="javascript:void(0);" class="menu-icon" onclick="myFunction()" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </a>
 
-  <div class="buttons" id="navButtons">
-    <a href="services.html" class="button">Our Services</a>
-    <a href="about.html" class="button">About Us</a>
-    <a href="contact.html" class="button">Contact Us</a>
-    <button id="darkModeToggle" class="button">
-      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-    </button>
-  </div>
+      <!-- Desktop nav -->
+      <nav class="nav nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="estimates.html">Get an estimate</a>
+      </nav>
 
-  <header class="header">
-      <div class="hamburger-menu">
-          <img src="images/icons/hamburger-menu.svg" alt="Menu" class="hamburger-icon">
+      <!-- Mobile vertical nav -->
+      <nav id="myLinks" class="nav-mobile" aria-label="Mobile">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="estimates.html">Get an estimate</a>
+      </nav>
       </div>
   </header>
 
-<section class="hero light-mode">
-  <h1>Contact us to see express at its finest.</h1>
-</section>
-
-<div class="container">
-  <div class="contact-section">
-    <h2 class="contact-us-title">TEXT US</h2>
-    <a href="tel:+16282820552" class="contact-link">
-      +1 (628) 282-0552
-    </a>
-    <p class="contact-info-text">
-      For quick inquiries and urgent requests, send us a text message. We'll respond as soon as possible.
-    </p>
-  </div>
-  <div class="contact-section">
-    <h2 class="contact-us-title">LEAVE US AN EMAIL</h2>
-    <a href="mailto:support@uliexpress.co" class="contact-link">
-      support@uliexpress.co
-    </a>
-    <p class="contact-info-text">
-      For detailed questions, feedback, or general inquiries, please send us an email. We'll get back to you within 24 hours.
-    </p>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-content">
-    <div class="logo">
-      <img src="images/uliexpress.png" alt="UliExpressLogo">
+  <main>
+    <div class="container">
+        <div class="contact-section">
+        <h2 class="contact-us-title">TEXT US</h2>
+        <a href="tel:+16282820552" class="contact-link">
+        +1 (628) 282-0552
+        </a>
+        <p class="contact-info-text">
+        For quick inquiries and urgent requests, send us a text message. We'll respond as soon as possible.
+        </p>
+        </div>
+        <div class="contact-section">
+        <h2 class="contact-us-title">LEAVE US AN EMAIL</h2>
+        <a href="mailto:support@uliexpress.co" class="contact-link">
+        support@uliexpress.co
+        </a>
+        <p class="contact-info-text">
+        For detailed questions, feedback, or general inquiries, please send us an email. We'll get back to you within 24 hours.
+        </p>
+        </div>
     </div>
-    <div class="contact-info">
-      <p>Uli Express, Inc.</p>
-      <p>Email: support@uliexpress.co</p>
-      <p>Phone: +1 (628) 282-0552</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year">2025</span> Uli Express, Inc. All rights reserved.</small>
+      </div>
+      <div class="contact-info">
+  <p>Uli Express, Inc.</p>
+  <p>Email: support@uliexpress.co</p>
+  <p>Phone: +1 (628) 282-0552</p>
     </div>
-    <div class="copyright">
-      &copy; 2024 Uli Express, Inc.
-    </div>
-  </div>
-</footer>
+    </footer>
+  </main>
 
-<script>
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  const heroSection = document.querySelector('.hero');
-
-  // Check for system preference on load
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.classList.add('dark-mode');
-    heroSection.classList.add('dark-mode');
-  }
-
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    heroSection.classList.toggle('dark-mode');
-  });
-
-  // Hamburger menu toggle
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const navButtons = document.getElementById('navButtons');
-
-  hamburgerMenu.addEventListener('click', () => {
-    navButtons.classList.toggle('show');
-  });
-</script>
-
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

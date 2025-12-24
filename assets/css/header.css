@@ -1,0 +1,124 @@
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+}
+
+.header-inner {
+  width: min(var(--container), calc(100% - 32px));
+  margin: 0 auto;
+  padding: 12px 14px;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  /* end css */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 120px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav a {
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: rgba(245,245,245,0.9);
+}
+
+.nav a[aria-current="page"] {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Desktop nav visible, mobile nav hidden by default */
+.nav-desktop { display: flex; }
+.nav-mobile { display: none; }
+
+/* Hamburger icon hidden on desktop */
+.menu-icon { display: none; }
+
+/* Hamburger styling (no header background changes) */
+.menu-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  position: relative;
+}
+
+/* Simple "bars" icon (no external icon library needed) */
+.menu-icon .bars,
+.menu-icon .bars::before,
+.menu-icon .bars::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background: rgba(245,245,245,0.92);
+  transform: translateX(-50%);
+  border-radius: 999px;
+}
+
+.menu-icon .bars { top: 50%; transform: translate(-50%, -50%); }
+.menu-icon .bars::before { top: -6px; }
+.menu-icon .bars::after { top: 6px; }
+
+/* Mobile behavior */
+@media (max-width: 820px) {
+  .menu-icon { display: inline-block; }
+  .nav-desktop { display: none; }
+
+  /* Vertical dropdown menu */
+  .nav-mobile {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-mobile a {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+  }
+
+  .nav-mobile a:hover {
+    background: rgba(255,255,255,0.06);
+  }
+}
+
+/* Force correct desktop/mobile visibility */
+.nav-desktop { display: flex; }
+.nav-mobile  { display: none !important; }
+.menu-icon   { display: none; }
+
+@media (max-width: 820px) {
+  .nav-desktop { display: none; }
+  .menu-icon   { display: inline-block; }
+  /* Still hidden by default; JS will set display:block when opened */
+  .nav-mobile  { display: none !important; }
+}

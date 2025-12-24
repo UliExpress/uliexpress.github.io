@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            overflow: hidden; 
+            overflow: hidden;
         }
 
         .container {
@@ -68,10 +69,10 @@
             background-color: #007bff;
             position: relative;
             animation: rotateAnimation 5s linear infinite;
-            margin: 20px auto; 
+            margin: 20px auto;
         }
 
-        .box-animation::before, 
+        .box-animation::before,
         .box-animation::after {
             content: "";
             position: absolute;
@@ -83,7 +84,7 @@
             height: 20%;
             left: -10%;
             top: 40%;
-            animation: waveAnimation 2s linear infinite; 
+            animation: waveAnimation 2s linear infinite;
         }
 
         .box-animation::after {
@@ -91,7 +92,7 @@
             height: 120%;
             left: 40%;
             top: -10%;
-            animation: waveAnimation 2s linear infinite reverse; 
+            animation: waveAnimation 2s linear infinite reverse;
         }
 
         @keyframes rotateAnimation {
@@ -103,8 +104,62 @@
             0%, 100% { transform: scaleY(1); }
             50% { transform: scaleY(1.2); }
         }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 300;
+  transform: translateZ(0);
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png");
+  background-repeat: repeat;
+
+  opacity: 0.15;
+  pointer-events: none;
+
+  animation: noise 1s steps(2) infinite;
+}
+
+/* 2) Make sure the blue box is ABOVE the grain */
+.blue-box, .error-box, .box, .card, .container-404 {
+  position: relative;
+  z-index: 400;
+}
+
+/* If your blue box uses an ::after/::before overlay, also keep those above grain */
+.blue-box::before,
+.blue-box::after {
+  z-index: 401;
+}
+
+/* 3) Animation */
+@keyframes noise {
+  0%   { transform: translate3d(0, 9rem, 0); }
+  10%  { transform: translate3d(-1rem, -4rem, 0); }
+  20%  { transform: translate3d(-8rem, 2rem, 0); }
+  30%  { transform: translate3d(9rem, -9rem, 0); }
+  40%  { transform: translate3d(-2rem, 7rem, 0); }
+  50%  { transform: translate3d(-9rem, -4rem, 0); }
+  60%  { transform: translate3d(2rem, 6rem, 0); }
+  70%  { transform: translate3d(7rem, -8rem, 0); }
+  80%  { transform: translate3d(-9rem, 1rem, 0); }
+  90%  { transform: translate3d(6rem, -5rem, 0); }
+  100% { transform: translate3d(-7rem, 0, 0); }
+}
+
     </style>
 </head>
+<div class="grain" aria-hidden="true"></div>
 <body>
     <div class="container">
         <h1>404</h1>

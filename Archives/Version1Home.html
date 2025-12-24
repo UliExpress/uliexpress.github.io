@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uli Express, Inc | Home</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter (Used by Tailwind's default font-sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * CUSTOMIZATION INSTRUCTIONS:
+         *
+         * FONT CUSTOMIZATION:
+         * To change the primary font, update the 'font-family' in the :root selector below.
+         * You'll also want to link the new font from Google Fonts or your preferred source
+         * in the <head> section above, similar to how 'Inter' is linked.
+         * Example: font-family: 'Roboto', sans-serif;
+         *
+         * COLOR CUSTOMIZATION:
+         * You can easily change the primary, secondary, and accent colors here.
+         * Tailwind CSS classes (e.g., bg-blue-500, text-gray-900) use these variables.
+         * Adjust the HEX values to match your brand's color palette.
+         */
+        :root {
+            --font-primary: 'Inter', sans-serif; /* Change this for main font */
+            --color-primary: #1D4ED8;   /* Example: Deep Blue for buttons, accents */
+            --color-secondary: #E0F2FE; /* Example: Light Blue for subtle backgrounds */
+            --color-text-dark: #1F2937; /* Example: Dark Gray for primary text */
+            --color-text-light: #F9FAFB; /* Example: Light Gray for text on dark backgrounds */
+            --color-background: #FFFFFF; /* Example: White for main page background */
+            --color-accent: #3B82F6;    /* Example: A slightly lighter blue for hover effects */
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+        }
+
+        /* Applying custom colors to Tailwind classes */
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .text-dark { color: var(--color-text-dark); }
+        .text-light { color: var(--color-text-light); }
+        .bg-accent { background-color: var(--color-accent); }
+        .hover\:bg-accent:hover { background-color: var(--color-accent); }
+
+        /* Custom CSS for Fade-in Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Banner -->
+    <header class="bg-primary text-light p-4 shadow-md rounded-b-lg">
+        <div class="container mx-auto flex justify-center items-center px-4 gap-4">
+            <!-- Replaced text with SVG Logo -->
+            <img src="svg/UliExpressLogo.svg" alt="Uli Express Logo" class="h-10 md:h-12 w-auto">
+            <!-- Dropdown Menu Button -->
+            <div class="relative group">
+                <button class="p-3 rounded-full bg-light text-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-colors duration-200" aria-label="Menu">
+                    <!-- Hamburger Menu SVG -->
+                    <img src="svg/burger.svg" alt="Menu Icon" class="w-6 h-6">
+                </button>
+                <!-- Dropdown content - Hidden by default -->
+                <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 invisible group-hover:visible group-focus-within:visible">
+                    <a href="#" class="block px-4 py-2 text-dark hover:bg-secondary rounded-md">Option 1</a>
+                    <a href="#" class="block px-4 py-2 text-dark hover:bg-secondary rounded-md">Option 2</a>
+                    <a href="#" class="block px-4 py-2 text-dark hover:bg-secondary rounded-md">Option 3</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <!-- Big Photo (Hero Section) -->
+        <section class="mb-12 fade-in-section">
+            <img src="https://placehold.co/1200x800/A0C4FF/FFFFFF?text=Hero+Image" alt="Hero Section Image"
+                 class="w-full rounded-lg shadow-lg object-cover
+                        aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/9]
+                        h-64 sm:h-80 md:h-96 lg:h-[500px]">
+        </section>
+
+        <!-- Big Block of Text, Small Paragraph, and Contact Button -->
+        <section class="text-center mb-12 p-8 rounded-lg shadow-md fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-dark mb-4 leading-tight">
+                Your Trusted Partner for Express Deliveries
+            </h2>
+            <p class="text-lg md:text-xl text-dark mb-8 max-w-3xl mx-auto rounded-md">
+                At Uli Express, we pride ourselves on delivering your packages quickly, safely, and efficiently.
+                Experience unparalleled service tailored to your needs.
+            </p>
+            <a href="mailto:info@uliexpress.com?subject=Inquiry&body=I%20would%20like%20to%20know%20more%20about%20your%20services."
+               class="inline-block bg-primary text-light font-bold py-3 px-8 rounded-full shadow-lg
+                      hover:bg-accent hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50
+                      transition-all duration-300 transform">
+                CONTACT US
+            </a>
+            <!-- Optional: Add a tel link for phone contact -->
+            <!-- <a href="tel:+1234567890" class="ml-4 inline-block bg-primary text-light font-bold py-3 px-8 rounded-full shadow-lg hover:bg-accent focus:outline-none focus:ring-4 focus:ring-4 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300">
+                CALL US
+            </a> -->
+        </section>
+
+        <!-- Another Photo -->
+        <section class="mb-12 fade-in-section">
+            <img src="https://placehold.co/1000x600/C4A1FF/FFFFFF?text=Delivery+Service" alt="Delivery Service"
+                 class="w-full h-auto rounded-lg shadow-lg object-cover">
+        </section>
+
+        <!-- Bullet and Paragraph Text -->
+        <section class="mb-12 bg-gray-50 p-8 rounded-lg shadow-md fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6 text-center">Our Commitment to Excellence</h2>
+            <ul class="space-y-8">
+                <li>
+                    <h3 class="text-2xl font-semibold text-primary mb-2 rounded-md">Speed and Efficiency</h3>
+                    <p class="text-dark text-lg rounded-md">
+                        We understand the importance of timely delivery. Our optimized routes and dedicated team ensure your packages reach their destination in record time, without compromising on safety.
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-2xl font-semibold text-primary mb-2 rounded-md">Reliability You Can Trust</h3>
+                    <p class="text-dark text-lg rounded-md">
+                        Every package is handled with the utmost care. From pick-up to drop-off, we employ robust tracking systems and strict protocols to guarantee the secure transit of your goods.
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-2xl font-semibold text-primary mb-2 rounded-md">Exceptional Customer Service</h3>
+                    <p class="text-dark text-lg rounded-md">
+                        Our support team is always ready to assist you. Whether you have a question about your delivery or need assistance with a new shipment, we're here to provide prompt and friendly service.
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-2xl font-semibold text-primary mb-2 rounded-md">Competitive Pricing</h3>
+                    <p class="text-dark text-lg rounded-md">
+                        High-quality service doesn't have to break the bank. Uli Express offers transparent and competitive pricing, ensuring you get the best value for your express delivery needs.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Three Photo-Text Blocks - Now Vertical -->
+        <section class="mb-12 space-y-12">
+            <div class="flex flex-col items-center gap-4 p-6 rounded-lg shadow-md fade-in-section">
+                <img src="https://placehold.co/600x400/98DDFF/FFFFFF?text=Parcel+Delivery" alt="Parcel Delivery"
+                     class="w-full h-64 md:h-80 rounded-lg shadow-md object-cover">
+                <div class="text-center w-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3 rounded-md">Seamless Shipping Experience</h2>
+                    <p class="text-lg text-dark rounded-md">
+                        Our user-friendly platform makes booking and tracking your shipments a breeze. From small parcels to large cargo, manage everything with ease.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-4 p-6 rounded-lg shadow-md fade-in-section">
+                <img src="https://placehold.co/600x400/FFC2A0/FFFFFF?text=Global+Reach" alt="Global Reach"
+                     class="w-full h-64 md:h-80 rounded-lg shadow-md object-cover">
+                <div class="text-center w-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3 rounded-md">Connecting You Globally</h2>
+                    <p class="text-lg text-dark rounded-md">
+                        Expand your reach with Uli Express. We offer extensive domestic and international shipping options to get your products where they need to be.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-4 p-6 rounded-lg shadow-md fade-in-section">
+                <img src="https://placehold.co/600x400/98FFBF/FFFFFF?text=Customer+Support" alt="Customer Support"
+                     class="w-full h-64 md:h-80 rounded-lg shadow-md object-cover">
+                <div class="text-center w-full">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3 rounded-md">Dedicated Support Team</h2>
+                    <p class="text-lg text-dark rounded-md">
+                        Our friendly and knowledgeable customer support team is available 24/7 to answer your questions and assist with any delivery concerns.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Review Section -->
+        <section class="mb-12 p-8 bg-white rounded-lg shadow-lg fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-primary mb-8 rounded-md">What Our Customers Say</h2>
+
+            <!-- Customer Reviews -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-semibold text-dark mb-6 text-center rounded-md">Customer Reviews</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 rounded-md">
+                        <p class="text-dark text-lg italic mb-4">"Uli Express has transformed our logistics! Their speed and reliability are unmatched. Highly recommended for any business needing efficient shipping."</p>
+                        <p class="font-semibold text-primary">- Jane Doe, CEO of Tech Solutions</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 rounded-md">
+                        <p class="text-dark text-lg italic mb-4">"Exceptional service from start to finish. The tracking system is fantastic, and my packages always arrive on time and in perfect condition. Thank you!"</p>
+                        <p class="font-semibold text-primary">- John Smith, Small Business Owner</p>
+                    </div>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="mb-12 p-8 bg-secondary rounded-lg shadow-md text-center fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-bold text-dark mb-6 rounded-md">Get in Touch</h2>
+            <div class="text-lg md:text-xl text-dark space-y-4">
+                <p><strong>Email:</strong> <a href="mailto:support@uliexpress.co" class="text-primary hover:underline rounded-md">support@uliexpress.co</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+1-628-282-0552" class="text-primary hover:underline rounded-md">+1-628-282-0552</a></p>
+                <p><strong>Located In:</strong> San Francisco Bay Area </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-light p-6 text-center rounded-t-lg shadow-inner">
+        <p class="text-sm md:text-base rounded-md">&copy; 2025 Uli Express, Inc.</p>
+        <p class="text-sm md:text-base mt-2 rounded-md">
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript for Fade-in animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

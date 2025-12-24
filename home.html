@@ -1,142 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local Bay Area drivers servicing your schedule or on-demand delivery needs">
-  <meta name="keywords" content="delivery, same day delivery, scheduled delivery, Bay Area, local delivery">
-  <title>Home | UliExpress</title>
-  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <link rel="stylesheet" href="css/style.css">
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A portfolio site showcasing our capabilities and how to get in touch.">
+  <meta name="theme-color" content="#C20000">
+
+  <!-- Favicon support -->
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <title>Uli Express, Inc | Home</title>
+
+  <link rel="stylesheet" href="assets/css/branding.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="header-inner" style="
+    width: 970px;
+    height: 90px;
+">
+      <a class="brand" href="index.html" aria-label="Go Home">
+        <img src="assets/img/UliExpressLogo.svg" alt="Uli Express logo">
+      </a>
 
-<header class="header">
-  <a href="/" class="logo"> <img src="images/uliexpress.png" alt="Logo"></a>
+      <!-- Mobile hamburger (ONLY on mobile via CSS) -->
+      <a href="javascript:void(0);" class="menu-icon" onclick="myFunction()" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </a>
 
-  <div class="buttons" id="navButtons">
-    <a href="services.html" class="button">Our Services</a>
-    <a href="about.html" class="button">About Us</a>
-    <a href="contact.html" class="button">Contact Us</a>
-    <button id="darkModeToggle" class="button">
-      <img src="images/icons/modetoggle.png" alt="Dark Mode Toggle">
-    </button>
-  </div>
+      <!-- Desktop nav -->
+      <nav class="nav nav-desktop">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="estimates.html">Get an estimate</a>
+      </nav>
 
-  <header class="header">
-      <div class="hamburger-menu">
-          <img src="images/icons/hamburger-menu.svg" alt="Menu" class="hamburger-icon">
+      <!-- Mobile vertical nav -->
+      <nav id="myLinks" class="nav-mobile" aria-label="Mobile">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="estimates.html">Get an estimate</a>
+      </nav>
       </div>
   </header>
 
-<section class="hero light-mode">
-  <h1>Local Bay Area drivers servicing your schedule or on-demand delivery needs</h1>
-</section>
+  <main>
+    <!-- Hero (replaces Selected work gallery grid) -->
+    <section class="section">
+      <div class="container">
 
-<div class="container">
-  <p style="font-family: 'Helvetica Neue', sans-serif; font-weight: 500;">
-    What's longer than 165 inches, has a large size-to-weight ratio, or weighs
-    more than 150 pounds? According to many parcel carriers, it is an oversized
-    item. Each carrier has specific metrics for what they consider "big and bulky,"
-    "oversized," or "substandard," which can be bad news for merchants and their
-    customers. That's because oversized items often cost more to ship, take
-    longer to arrive, and come with all kinds of extra fees, penalties, and
-    hassles—and that doesn't even make me want to return large items via normal
-    shipping channels. Oversupply can be a mystery. If you can't see this
-    information, it's hard to promise customers timely receipt and a fair
-    price. Often, retailers don't offer to ship oversized items at all,
-    which means customer frustration and lost sales. Here are some insights
-    into why oversize shipping is different and how you can overcome these
-    challenges. Whether it's a 6-foot ficus tree, alpine skis, a couch or
-    something else, it's possible to skip oversized shipping and move those
-    big items.
-  </p>
+        <div class="hero-slider" data-hero="">
+          <!-- Slides (add/remove freely) -->
+          <div class="hero-slide is-active">
+            <img class="hero-media" src="assets/img/gallery/showcase1new.png" alt="Showcase image 1">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-media" src="assets/img/gallery/showcase1new.png" alt="Showcase image 2">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-media" src="assets/img/gallery/showcase3.jpg" alt="Showcase image 3">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-media" src="assets/img/gallery/showcase1new.png" alt="Showcase image 4">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-media" src="assets/img/gallery/showcase1new.png" alt="Showcase image 5">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-media" src="assets/img/gallery/showcase6.jpg" alt="Showcase image 6">
+          </div>
 
-  <a href="contact.html" class="btn">Contact us</a>
-</div>
+          <!-- Stinger divider (logo travels left->right between slides) -->
+          <div class="hero-stinger" aria-hidden="true">
+            <img class="hero-stinger-divider" src="assets/img/UliExpressLogo.svg" alt="">   <!-- do not forget to actually put the image here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="sep">
 
-<div class="location-list">
-  <span>Available in:</span>
-  <span>San Francisco</span>
-  <span>San Jose</span>
-  <span>Oakland</span>
-  <span>Sacramento</span>
-</div>
+    <!-- Headline + paragraph -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">We're here to do the heavy lifting.</h1>
+        <p class="section-text">
+          At Uli Express, we pride ourselves in getting the job done as soon as you need it to be.
+          We're local Bay Area drivers servicing your schedule or on demand delivery needs.
+        </p>
+      </div>
+    </section>
 
-<footer>
-  <div class="footer-content">
-    <div class="logo">
-      <img src="images/uliexpress.png" alt="UliExpressLogo">
+    <hr class="sep">
+
+    <!-- Photo + facts -->
+    <section class="section">
+      <div class="container split">
+        <div>
+          <img src="assets/img/gallery/showcase7.jpg" alt="Showcase photo" style="border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.10);" loading="lazy">
+        </div>
+        <div>
+          <p class="kicker">Where we're based:</p>
+          <ul class="facts">
+            <li class="fact">San Francisco Bay Area</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- What we do -->
+    <section class="section">
+      <div class="container">
+        <p class="kicker">What we do</p>
+        <div class="split">
+          <div class="fact">
+            <h2 class="section-title" style="margin: 0 0 8px;">Same Day Delivery</h2>
+            <p class="section-text">Get your items delivered quickly and efficiently within the same day.* (exclusions apply)</p>
+          </div>
+          <div class="fact">
+            <h2 class="section-title" style="margin: 0 0 8px;">Scheduled Delivery</h2>
+            <p class="section-text">Plan your deliveries in advance and have them delivered on your preferred date and time.</p>
+          </div>
+          <div class="fact">
+            <h2 class="section-title" style="margin: 0 0 8px;">Large Item Delivery</h2>
+            <p class="section-text">We handle large and bulky items with care and expertise.</p>
+          </div>
+          <div class="fact">
+            <h2 class="section-title" style="margin: 0 0 8px;">Rapid Service</h2>
+            <p class="section-text">We're here for when speed matters most. That's express.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- Reach out -->
+    <section class="section">
+      <div class="container reachout">
+        <h2 class="section-title">Need a job done?</h2>
+        <p class="section-text">We're here for you.</p>
+        <a class="btn btn-primary" href="contact.html">Inquire</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year">2025</span> Uli Express, Inc. All rights reserved.</small>
+      </div>
+      <div class="contact-info">
+  <p>Uli Express, Inc.</p>
+  <p>Email: support@uliexpress.co</p>
+  <p>Phone: +1 (628) 282-0552</p>
     </div>
-    <div class="contact-info">
-      <p>Uli Express, Inc.</p>
-      <p>Email: support@uliexpress.co</p>
-      <p>Phone: +1 (628) 282-0552</p>
-    </div>
-    <div class="copyright">
-      &copy; 2024 Uli Express, Inc.
-    </div>
-  </div>
-</footer>
+    </footer>
+  </main>
 
-<script>
-  // Get the necessary elements
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  const heroSection = document.querySelector('.hero');
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-  // Function to set the theme
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      body.classList.add('dark-mode');
-      heroSection.classList.add('dark-mode');
-    } else {
-      body.classList.remove('dark-mode');
-      heroSection.classList.remove('dark-mode');
-    }
-  }
-
-  // Function to set the initial theme based on system and user preferences
-  function setInitialTheme() {
-    // 1. Check for user preference
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-      return; // Exit early if user preference is found
-    }
-
-    // 2. Check for system preference if no user preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    } else {
-      setTheme('light'); // Default to light if no system preference
-    }
-  }
-
-  // Call the function to set the initial theme when the page loads
-  setInitialTheme();
-
-  // Toggle dark mode on button click and store the preference
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    heroSection.classList.toggle('dark-mode');
-
-    // Store the user's preference
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // Hamburger menu toggle
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const navButtons = document.getElementById('navButtons');
-
-  hamburgerMenu.addEventListener('click', () => {
-    navButtons.classList.toggle('show');
-  });
-</script>
-
-</body>
-</html>
+</body></html>

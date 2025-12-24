@@ -1,0 +1,40 @@
+/* ========== Brand tokens (swap here, site updates everywhere) ========== */
+:root {
+  /* Fonts */
+  --font-primary: "Chalet", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-weight-primary: 500;
+
+  /* Colors */
+  --brand-red: #C20000;
+  --brand-grey: #414042;
+  --red-shadow: #d65354;
+  --grey-shadow: #a59ca4;
+
+  /* Page */
+  --page-bg: #0b0b0c;
+  --text: #f5f5f5;
+  --muted: rgba(245, 245, 245, 0.75);
+
+  /* Layout */
+  --container: 1120px;
+  --radius: 16px;
+  --gap: 20px;
+}
+
+/* Chalet Medium default */
+@font-face {
+  font-family: "Chalet";
+  src: url("../fonts/ChaletLondonNineteenSixty.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Chalet Heavy alternative */
+@font-face {
+  font-family: "Chalet";
+  src: url("../fonts/ChaletNewYorkNineteenSixty.woff2") format("woff2");
+  font-weight: 800;
+  font-style: heavy;
+  font-display: swap;
+}

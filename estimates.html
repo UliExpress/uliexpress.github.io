@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Estimate calculator based on weight, distance, and speed." />
+  <meta name="theme-color" content="#C20000" />
+
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <title>Uli Express, Inc — Estimate Calculator</title>
+
+  <link rel="stylesheet" href="assets/css/branding.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner" style="width: 970px; height: 90px;">
+      <a class="brand" href="index.html" aria-label="Go Home">
+        <img src="assets/img/UliExpressLogo.svg" alt="Uli Express logo" />
+      </a>
+
+      <a href="javascript:void(0)" class="menu-icon" onclick="myFunction()" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"></span>
+      </a>
+
+      <nav class="nav nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="estimates.html" aria-current="page">Get an estimate</a>
+      </nav>
+
+      <nav id="myLinks" class="nav-mobile" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="estimates.html" aria-current="page">Get an estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <p class="kicker">Estimate</p>
+        <h1 class="section-title">Delivery estimate calculator</h1>
+        <p class="section-text">
+          Enter the job details to get a quick estimate*. Final pricing may vary.
+        </p>
+
+        <div class="calc-card" data-calc>
+          <form class="calc-form" data-calc-form>
+            <label class="calc-field">
+              <span class="calc-label">Estimated weight (lbs)</span>
+              <input class="calc-input" type="number" min="0" step="1" value="50" name="weightLbs" required />
+            </label>
+
+            <label class="calc-field">
+              <span class="calc-label">Width (in)</span>
+              <input class="calc-input" type="number" min="0" step="0.5" value="24" name="widthIn" required />
+            </label>
+
+            <label class="calc-field">
+              <span class="calc-label">Height (in)</span>
+              <input class="calc-input" type="number" min="0" step="0.5" value="18" name="heightIn" required />
+            </label>
+
+            <label class="calc-field">
+              <span class="calc-label">Distance (miles) [From origin to destination]</span>
+              <input class="calc-input" type="number" min="0" step="0.1" value="10" name="distanceMi" required />
+            </label>
+
+            <div class="calc-actions">
+              <button class="btn btn-primary" type="submit">Calculate</button>
+              <button class="btn" type="button" data-calc-reset>Reset</button>
+            </div>
+          </form>
+
+          <hr class="sep" style="margin: 18px 0;" />
+
+          <div class="calc-results" aria-live="polite">
+            <div class="calc-result">
+              <div class="calc-result-k">Estimated cost</div>
+              <div class="calc-result-v" data-calc-cost>—</div>
+            </div>
+
+            <p class="section-text" style="margin-top: 10px;">
+              Please note this is not an exact price. Prices vary on various more factors.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <small><span id="year">2025</span> Uli Express, Inc. All rights reserved.</small>
+      </div>
+
+      <div class="contact-info">
+        <p>Uli Express, Inc.</p>
+        <p>Email: support@uliexpress.co</p>
+        <p>Phone: 1 (628) 282-0552</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

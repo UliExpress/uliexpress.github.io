@@ -1,121 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UliExpress</title>
-  <link rel="icon" type="image/ico" href="images/icons/favicon.ico">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Restricted access." />
+  <meta name="theme-color" content="#C20000" />
+
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <title>Access Required</title>
+
+  <link rel="stylesheet" href="assets/css/branding.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
   <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .gate {
       min-height: 100vh;
-      background-color: #121212;
-      color: #ffffff;
+      display: grid;
+      place-items: center;
+      padding: 32px 0;
     }
-
-    .logo {
-      width: 200px;
-      margin-bottom: 20px;
+    .gate-card {
+      width: min(520px, calc(100% - 32px));
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      padding: 22px;
     }
-
-    .work-in-progress {
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 20px;
+    .gate-card img {
+      width: 160px;
+      height: auto;
+      margin-bottom: 14px;
     }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
+    .gate-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
     }
-
-    .password-input {
-      border: none;
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
-      width: 200px;
-      text-align: center;
-      background-color: #242424;
-      color: #ffffff;
-      animation: none;
+    .gate-input {
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-primary);
+      outline: none;
     }
-
-    .circle-button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .gate-input:focus {
+      border-color: rgba(255,255,255,0.22);
     }
-
-    .circle-button img {
-      width: 20px;
-      height: 20px;
+    .gate-error {
+      margin: 10px 0 0;
+      color: rgba(245,245,245,0.85);
     }
-
-    .circle-button:hover {
-      background-color: #0056b3;
-    }
-
-    .error-message {
-      color: red;
-      display: none;
-    }
-
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-3px); }
-      50% { transform: translateX(3px); }
-      75% { transform: translateX(-3px); }
-      100% { transform: translateX(0); }
-    }
-
-    .password-input.shake {
-      animation: shake 0.2s ease-in-out;
+    .gate-error span {
+      color: var(--red-shadow);
     }
   </style>
 </head>
-<body>
 
-  <img src="images/uliexpress.png" alt="UliExpress Logo" class="logo">
-  <p class="work-in-progress">Work in progress. If you're the owner of this site, please enter the password now.</p>
-  <div>
-    <input type="password" placeholder="Enter password" class="password-input" id="passwordInput">
-    <span class="error-message" id="errorMessage"></span>
-    <button onclick="checkPassword()" class="circle-button"> <img src="images/arrow-right.png" alt="Arrow Right"> </button>
-  </div>
+<body>
+  <main class="gate">
+    <section class="gate-card" aria-label="Password gate">
+      <img src="assets/img/UliExpressLogo.svg" alt="Uli Express logo" />
+
+      <h1 class="section-title" style="margin: 0 0 6px;">Access required</h1>
+      <p class="section-text" style="margin: 0;">Enter the password to continue.</p>
+
+      <form class="gate-form" id="gateForm" autocomplete="off">
+        <input
+          class="gate-input"
+          id="pw"
+          type="password"
+          inputmode="text"
+          placeholder="Password"
+          aria-label="Password"
+          required
+        />
+        <button class="btn btn-primary" type="submit">Continue</button>
+        <p class="gate-error" id="gateError" hidden><span>Wrong password.</span> Try again.</p>
+      </form>
+    </section>
+  </main>
 
   <script>
-    function checkPassword() {
-      var password = document.getElementById("passwordInput").value;
-      var encodedPassword = "YW50";
-      var decodedPassword = atob(encodedPassword);
-      var errorMessage = document.getElementById("errorMessage");
-      document.getElementById("passwordInput").classList.remove("shake");
+    // 1) Generate your SHA-256 hash once, then paste it below (see instructions).
+    const EXPECTED_SHA256_HEX = "cdb59ac48dc26ea4f7d9b448777a6032754d77da15bf580ac3f55788b3ea577d";
 
-      if (password === decodedPassword) {
-        window.location.href = "home.html";
-      } else {
-        errorMessage.textContent = "Incorrect password. Please try again.";
-        errorMessage.style.display = "block";
-        document.getElementById("passwordInput").classList.add("shake");
-      }
+    // 2) Where to send the user after success:
+    const REDIRECT_TO = "index.html";
+
+    // Hash helper using Web Crypto digest(). [web:183]
+    async function sha256Hex(message) {
+      const msgUint8 = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
     }
-  </script>
 
+    const form = document.getElementById("gateForm");
+    const pw = document.getElementById("pw");
+    const err = document.getElementById("gateError");
+
+    // If already unlocked in this browser session:
+    if (sessionStorage.getItem("site_unlocked") === "true") {
+      window.location.replace(REDIRECT_TO);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      err.hidden = true;
+
+      const entered = pw.value || "cdb59ac48dc26ea4f7d9b448777a6032754d77da15bf580ac3f55788b3ea577d";
+      const enteredHash = await sha256Hex(entered);
+
+      if (enteredHash === EXPECTED_SHA256_HEX) {
+        sessionStorage.setItem("site_unlocked", "true");
+        window.location.replace(REDIRECT_TO);
+      } else {
+        pw.value = "";
+        err.hidden = false;
+        pw.focus();
+      }
+    });
+  </script>
 </body>
 </html>
