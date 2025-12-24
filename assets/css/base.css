@@ -90,3 +90,5 @@ hr.sep {
  .section-text-about {
    margin-top: 7px;
  }
+
+ html, body { overflow-x: hidden; }
