@@ -1,12 +1,7 @@
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (!x) return;
-
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+  x.style.display = (x.style.display === "block") ? "none" : "block";
 }
 
 // Hero slider + stinger transition
@@ -19,8 +14,8 @@ function myFunction() {
   if (!slides.length || !stinger) return;
 
   var index = 0;
-  var intervalMs = 5200;      // total time each slide stays
-  var stingerDelayMs = 500;   // wait before swapping slide (lets divider be visible)
+  var intervalMs = 5200;
+  var stingerDelayMs = 500;
 
   function show(i) {
     slides.forEach(function (s) { s.classList.remove("is-active"); });
@@ -28,37 +23,36 @@ function myFunction() {
   }
 
   function next() {
-    // stinger runs, then we swap the slide while it crosses
     stinger.classList.add("is-animating");
-
     window.setTimeout(function () {
       index = (index + 1) % slides.length;
       show(index);
     }, stingerDelayMs);
 
-    // remove animation class so it can replay next time
     window.setTimeout(function () {
       stinger.classList.remove("is-animating");
     }, 700);
   }
 
-  // init
   show(index);
   window.setInterval(next, intervalMs);
 })();
 
-// ===== Estimate Calculator (Price only) =====
-// Easily editable constants live here:
+// ===== Estimate Calculator (with delivery speed + scheduled fields) =====
 const ESTIMATE_CONFIG = {
-  baseFee: 25,          // $
-  perMileRate: 2.25,    // $ per mile
-  perLbRate: 0.08,      // $ per pound
+  baseFee: 25,
+  perMileRate: 2.25,
+  perLbRate: 0.08,
+  oversizeThresholdIn: 36,
+  oversizeFee: 20,
+  minCharge: 50,
 
-  // Simple size pricing (edit freely)
-  oversizeThresholdIn: 36, // if width OR height >= this -> oversize fee applies
-  oversizeFee: 20,         // $
-
-  minCharge: 50,        // $
+  // Placeholder speed adders (swap to % later)
+  speedAdders: {
+    asap: 1,
+    scheduled: 1,
+    nextday: 1,
+  },
 };
 
 function formatMoney(amount) {
@@ -73,7 +67,30 @@ function formatMoney(amount) {
   const costEl = root.querySelector("[data-calc-cost]");
   const resetBtn = root.querySelector("[data-calc-reset]");
 
-  function calculateCost(weightLbs, widthIn, heightIn, distanceMi) {
+  if (!form || !costEl) return;
+
+  const speedEl = root.querySelector("[data-calc-speed]");
+  const scheduledEls = root.querySelectorAll("[data-calc-scheduled]");
+
+  function setScheduledVisible(visible) {
+    scheduledEls.forEach((el) => {
+      // Works regardless of whether you used hidden="" or CSS display:none
+      el.hidden = !visible;
+      el.style.display = visible ? "" : "none";
+    });
+  }
+
+  function syncScheduledVisibility() {
+    if (!speedEl) return;
+    document.body.classList.toggle("is-scheduled", speedEl.value === "scheduled");
+  }
+
+  if (speedEl) {
+    speedEl.addEventListener("change", syncScheduledVisibility);
+    syncScheduledVisibility();
+  }
+
+  function calculateCost(weightLbs, widthIn, heightIn, distanceMi, speed) {
     const base = ESTIMATE_CONFIG.baseFee;
     const distanceCharge = distanceMi * ESTIMATE_CONFIG.perMileRate;
     const weightCharge = weightLbs * ESTIMATE_CONFIG.perLbRate;
@@ -85,6 +102,7 @@ function formatMoney(amount) {
     const sizeCharge = isOversize ? ESTIMATE_CONFIG.oversizeFee : 0;
 
     let total = base + distanceCharge + weightCharge + sizeCharge;
+    total += ESTIMATE_CONFIG.speedAdders[speed] ?? 0;
     total = Math.max(total, ESTIMATE_CONFIG.minCharge);
 
     return total;
@@ -94,15 +112,23 @@ function formatMoney(amount) {
     costEl.textContent = "—";
   }
 
+  if (speedEl) {
+    speedEl.addEventListener("change", syncScheduledVisibility);
+    syncScheduledVisibility();
+  } else {
+    // If speed selector isn't present, never show scheduled fields
+    setScheduledVisible(false);
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const fd = new FormData(form);
-
     const weightLbs = Number(fd.get("weightLbs"));
     const widthIn = Number(fd.get("widthIn"));
     const heightIn = Number(fd.get("heightIn"));
     const distanceMi = Number(fd.get("distanceMi"));
+    const speed = String(fd.get("speed") || "asap");
 
     const ok =
       isFinite(weightLbs) && weightLbs >= 0 &&
@@ -115,14 +141,17 @@ function formatMoney(amount) {
       return;
     }
 
-    const total = calculateCost(weightLbs, widthIn, heightIn, distanceMi);
+    const total = calculateCost(weightLbs, widthIn, heightIn, distanceMi, speed);
     costEl.textContent = formatMoney(total);
   });
 
-  resetBtn.addEventListener("click", () => {
-    form.reset();
-    clear();
-  });
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      form.reset();
+      if (speedEl) syncScheduledVisibility();
+      clear();
+    });
+  }
 
   clear();
 })();

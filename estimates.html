@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <title>Uli Express, Inc | Estimate</title>
+  <title>Uli Express, Inc — Estimate</title>
 
   <link rel="stylesheet" href="assets/css/branding.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
@@ -22,7 +22,7 @@
 
 <body>
   <header class="site-header">
-    <div class="header-inner" style="width: 970px; height: 90px;">
+    <div class="header-inner" style="width: 970px; height: 90px">
       <a class="brand" href="index.html" aria-label="Go Home">
         <img src="assets/img/UliExpressLogo.svg" alt="Uli Express logo" />
       </a>
@@ -50,9 +50,7 @@
       <div class="container">
         <p class="kicker">Estimate</p>
         <h1 class="section-title">Delivery estimate calculator</h1>
-        <p class="section-text">
-          Enter the job details to get a quick estimate*. Final pricing may vary.
-        </p>
+        <p class="section-text">Enter the job details to get a quick estimate. Final pricing may vary.</p>
 
         <div class="calc-card" data-calc>
           <form class="calc-form" data-calc-form>
@@ -72,8 +70,27 @@
             </label>
 
             <label class="calc-field">
-              <span class="calc-label">Distance (miles) [From origin to destination]</span>
+              <span class="calc-label">Distance (miles) — From origin to destination</span>
               <input class="calc-input" type="number" min="0" step="0.1" value="10" name="distanceMi" required />
+            </label>
+
+            <label class="calc-field">
+              <span class="calc-label">Delivery speed</span>
+              <select class="calc-input" name="speed" data-calc-speed required>
+                <option value="asap">ASAP (same day)</option>
+                <option value="scheduled">Scheduled</option>
+                <option value="nextday">Next day</option>
+              </select>
+            </label>
+
+            <label class="calc-field" data-calc-scheduled hidden>
+              <span class="calc-label">Scheduled date</span>
+              <input class="calc-input" type="date" name="scheduledDate" data-calc-date />
+            </label>
+
+            <label class="calc-field" data-calc-scheduled hidden>
+              <span class="calc-label">Scheduled time</span>
+              <input class="calc-input" type="time" name="scheduledTime" data-calc-time />
             </label>
 
             <div class="calc-actions">
@@ -82,20 +99,19 @@
             </div>
           </form>
 
-          <hr class="sep" style="margin: 18px 0;" />
+          <hr class="sep" style="margin: 18px 0" />
 
           <div class="calc-results" aria-live="polite">
             <div class="calc-result">
               <div class="calc-result-k">Estimated cost</div>
               <div class="calc-result-v" data-calc-cost>—</div>
             </div>
-
-            <p class="section-text" style="margin-top: 10px;">
-              Please note this is not an exact price. Prices vary on various more factors.
-            </p>
           </div>
-        </div>
 
+          <p class="section-text" style="margin-top: 10px;">
+            *Please note this is not an exact price. Prices vary on various other factors.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -106,8 +122,8 @@
 
       <div class="contact-info">
         <p>Uli Express, Inc.</p>
-        <p>Email: support@uliexpress.co</p>
-        <p>Phone: 1 (628) 282-0552</p>
+        <p>Email support@uliexpress.co</p>
+        <p>Phone +1 (628) 282-0552</p>
       </div>
     </footer>
   </main>

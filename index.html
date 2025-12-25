@@ -30,16 +30,19 @@
       border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.03);
       padding: 22px;
+      text-align: center;
     }
     .gate-card img {
       width: 160px;
       height: auto;
-      margin-bottom: 14px;
+      margin: 0 auto 14px; /* centers image */
+      display: block;
     }
     .gate-form {
       display: grid;
       gap: 12px;
       margin-top: 14px;
+      justify-items: center;
     }
     .gate-input {
       padding: 14px 14px;
@@ -50,6 +53,7 @@
       font-family: var(--font-primary);
       font-weight: var(--font-weight-primary);
       outline: none;
+      width: 100%; max-width: 360px;
     }
     .gate-input:focus {
       border-color: rgba(255,255,255,0.22);

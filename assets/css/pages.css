@@ -53,7 +53,6 @@
   padding: 26px 0;
   color: rgba(245,245,245,0.72);
   border-top: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 /* ========== Hero slider (Selected work) ========== */
@@ -206,4 +205,25 @@
 /* Optional: price-only calculator results */
 .calc-results {
   grid-template-columns: 1fr;
+}
+
+/* Footer alignment tweaks */
+.footer .container {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.footer .contact-info {
+  margin-left: 0; /* overrides base.css contact-info margin-left */
+  width: 100%;
+}
+
+/* Estimates: scheduled fields hidden unless body has .is-scheduled */
+[data-calc-scheduled] {
+  display: none;
+}
+
+body.is-scheduled [data-calc-scheduled] {
+  display: grid; /* matches your .calc-field layout */
 }
